@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
-    "host": "localhost",
+    "password": "password",
+    "database": "cupcakes",
+    "host": "127.0.01",
     "dialect": "mysql"
   },
   "test": {
