@@ -23,5 +23,23 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
+  Orders.associate = function(models) {
+    // We're saying that a Post should belong to an Author
+    // A Post can't be created without an Author due to the foreign key constraint
+    Orders.belongsTo(models.Customer, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+  Orders.associate = function(models) {
+    // We're saying that a Post should belong to an Author
+    // A Post can't be created without an Author due to the foreign key constraint
+    Orders.belongsTo(models.Payment, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return Orders;
 };
