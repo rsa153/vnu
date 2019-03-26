@@ -16,38 +16,38 @@
                     <h1>Welcome To VNU Cupcakes</h1>
                 </div>
         <div class="row">
-          <div class="col-md-12"
+          <div class="col-md-12">
           <p>Baked from scratch every morning for ultimate freshness. To order, just fill out the order form, and submit it to us and you will receive and email to finalize the order! Regular cupcakes can be ordered in amounts from half dozen to four dozen. Custom cupcakes  will vary based on order.</p>
           </div>
         </div>
                 
         <form>
             <div class="row">
-                <div class="form-group col-md-3">
-                    <label for ="orderDate"><strong>Order Date: </strong></label>
-                    </div>
-                    <div class="form-group col-md-9">
-                        <input type="date" class="form-control" id="orderDate">
-                    </div>
-                <div class="form-group col-md-3"> 
-                    <label for ="customerID"><strong>Customer ID: </strong></label>
-                  </div>
-                <div class="form-group col-md-9">
-                    <input type="number" class="form-control" id="customerID">
-                  </div>
-                <div class="form-group col-md-3">
-                    <label for ="email"><strong>Email Address </strong></label>
-                    </div>
-                <div class="form-group col-md-9">
-                    <input type="email" class="form-control" id="email">
+            <div class="form-group col-md-3">
+                <label for ="orderDate"><strong>Order Date: </strong></label>
                 </div>
-                <div class="form-group col-md-3">
-                    <label for ="pickupDate"><strong>Pick Up Date: </strong></label>
-                    <small class="form-text text-muted">Please allow at least 2 business days from order date. </small>
-                    </div>                  
-                      <div class="form-group col-md-9">
-                          <input type="date" class="form-control" id="pickupDate">
-                      </div>
+                <div class="form-group col-md-9">
+                    <input type="date" class="form-control" id="orderDate">
+                </div>
+            <div class="form-group col-md-3"> 
+                <label for ="customerID"><strong>Customer ID: </strong></label>
+              </div>
+            <div class="form-group col-md-9">
+                <input type="number" class="form-control" id="customerID">
+              </div>
+            <div class="form-group col-md-3">
+                <label for ="email"><strong>Email Address </strong></label>
+                </div>
+            <div class="form-group col-md-9">
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group col-md-3">
+                <label for ="pickupDate"><strong>Pick Up Date: </strong></label>
+                <small class="form-text text-muted">Please allow at least 2 business days from order date. </small>
+                </div>                  
+                  <div class="form-group col-md-9">
+                      <input type="date" class="form-control" id="pickupDate">
+                  </div>
                     
                 <div class="form-group col-md-3">
                     <label for = "cupcakeType"><strong>Cupcake Type:</strong> </label>
@@ -69,7 +69,7 @@
                     </div>
                  <div class="form-group col-md-9">
                         <select name="quantity" id="quantity">
-                            <option value="12">1 dozen</option> 
+                            <option value="6">1/2 dozen</option> 
                             <option value="12">1 dozen</option>
                             <option value="24">2 dozen</option>
                             <option value="36">3 dozen</option>
@@ -80,7 +80,7 @@
                     <label for ="instructions"><strong>Special Instructions? </strong></label>
                 </div> 
                 <div class="form-group col-md-9">
-                    <textarea name="instructions" cols="40" rows="5"></textarea>
+                    <textarea name="instructions" cols="100" rows="5"></textarea>
                 </div>
                 <div class="form-group col-md-3">
                   <label for="totalPrice"><strong>Price: </strong> </label>                  
@@ -90,29 +90,47 @@
               <input type="number" class="form-control" id="totalPrice">
               </div>
               <hr>
-                      <p>Please enter your credit card card information.</p>
+              <div class="col-md-12"><p>Please enter your credit card card information.</p></div>
+                    
                       <div class="form-group col-md-3">
-                        <label for ="cc"><strong>Credit Card:</strong></label>                       
+                        <label for ="cc"><strong>Select Card:</strong></label>                       
                       </div>
                       <div class="form-group col-md-9">
                           <select name="credit" id="credit">
                               <option value="MC">Mastercard</option> 
                               <option value="VS">Visa</option>
                               <option value="AX">American Express</option>
-                              <option value="36">3 dozen</option>
-                              <option value="48">4 dozen</option>
+                              <option value="DS">Discover</option>                           
                             </select>
                           </div>
+                      <div class="form-group col-md-3">
+                          <label for ="cc"><strong>Credit Card Number:</strong></label>  
+                           
+                      </div> 
                       <div class="form-group col-md-9">
-                          <input type="email" class="form-control" id="email">               
-                <div class = "form-group col-md-3">&nbsp;</div>
-                <div class="form-group col-md-9"><button type="submit" class="btn btn-primary">Submit</button></div>    
-                                       
-               </div>
-        
-        </div>  
-                
+                          <input type="text" class="form-control" id="cardNumber"> 
+                      </div>    
+                  <div class = "form-group col-md-3"><label for ="cvc"><strong>CVC:</strong></label></div>
+                  <div class = "form-group col-md-9">
+                    <input type="text" class = "form-control" id="cvc">
+                  </div>
+                <div class="form-group col-md-9"><button type="submit" class="btn btn-primary id" id="submit">Submit</button></div>                                         
+               </div>        
+        </div>                  
               </form>
+              <script>
+                  //Get Values from form
+          $("#submit").on("click", function(event){
+                      event.preventDefault();
+                  });
+
+      var orderData = {
+         date: $("#orderDate").val(),
+         customerID: $("#customerID").val().trim(),
+         email: $("#email").val().trim(),
+         pickupDate: $("")
+                      </script>
+                      
 </body>
 
 <footer>
