@@ -9,14 +9,21 @@ module.exports = function(app) {
       navBar: false
     });
   });
+  app.get("/", function(req, res) {
+    res.sendFile(db.join(__dirname, "../Cupcakes/public/views/home.html"));
+  });
+  app.get("/about", function(req, res) {
+    res.sendFile(db.join(__dirname, "../Cupcakes/public/views/about.html"));
+  });
+  app.get("/inventory", function(req, res) {
+    res.sendFile(db.join(__dirname, "../Cupcakes/public/views/inventory.html"));
+  });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
+  app.get("/order", function(req, res) {
+    res.sendFile(db.join(__dirname, "../Cupcakes/public/views/oder.html"));
+  });
+  app.get("/custom", function(req, res) {
+    res.sendFile(db.join(__dirname, "../Cupcakes/public/views/customization.html"));
   });
 
   // Render 404 page for any unmatched routes
