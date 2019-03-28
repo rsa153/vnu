@@ -1,29 +1,22 @@
 var db = require("../models");
 
 module.exports = function(app) {
+
   app.get("/", function(req, res) {
-    res.render("index", {
-      title: "Home",
-      css: "styles.css",
-      signInPage: false,
-      navBar: false
-    });
-  });
-  app.get("/", function(req, res) {
-    res.sendFile(db.join(__dirname, "../Cupcakes/public/views/home.html"));
+    res.sendFile(db.join(__dirname, "../views/home.html"));
   });
   app.get("/about", function(req, res) {
-    res.sendFile(db.join(__dirname, "../Cupcakes/public/views/about.html"));
+    res.sendFile(db.join(__dirname, "../views/about.html"));
   });
   app.get("/inventory", function(req, res) {
-    res.sendFile(db.join(__dirname, "../Cupcakes/public/views/inventory.html"));
+    res.sendFile(db.join(__dirname, "../views/inventory.html"));
   });
 
   app.get("/order", function(req, res) {
-    res.sendFile(db.join(__dirname, "../Cupcakes/public/views/oder.html"));
+    res.sendFile(db.join(__dirname, "../views/order.html"));
   });
   app.get("/custom", function(req, res) {
-    res.sendFile(db.join(__dirname, "../Cupcakes/public/views/customization.html"));
+    res.sendFile(db.join(__dirname, "../views/customization.html"));
   });
 
   // Render 404 page for any unmatched routes
