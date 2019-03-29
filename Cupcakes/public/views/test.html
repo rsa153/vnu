@@ -196,27 +196,63 @@
     <div class="modal fade" id="modal-sign-in" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
-            <div class="modal-header">
+                <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+              <div class="md-form mb-5">
+                <i class="fas fa-envelope prefix grey-text"></i>
+                <input type="email" id="defaultForm-email" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+              </div>
+      
+              <div class="md-form mb-4">
+                <i class="fas fa-lock prefix grey-text"></i>
+                <input type="password" id="defaultForm-pass" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+              </div>
+      
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button class="btn btn-default">Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <a href="" class="btn btn-default btn-rounded mb-4"  id= "submit-sign-in" data-toggle="modal" data-target="#modalLoginForm">Launch
+          Modal Login Form</a>
+      </div>
   
-              <!-- Title for Modal -->
+              <!-- Title for Modal
               <h5 class="modal-title text-center" id="modalTitle">Please input your information below to sign up</h5>
   
-              <!-- Close ("X") button for modal -->
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               Close ("X") button for modal -->
+              <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-            </div>
+            </div> -->
             
             <!-- Sign in form -->
-            <div class="modal-body">
+<!-- 
+            <div class="modal-dialogue" role="document">
               <form class="cmxform" id="form-sign-in" method="get" action="">
+                  <div class="modal-content">
+                      <div class="modal-header text-center">
+                          <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
                 <fieldset>
+                    <i class="fas fa-envelope prefix grey-text"></i>
                     <label for="email"></label>
-                    <input id="email" type="email" name="email" placeholder="Email" required>
+                    <input id="email" type="email" name="email" placeholder="Email" class="form-control validate" required>
                   </p>
                   <p>
+                    <i class="fas fa-lock prefix grey-text"></i>
                     <label for="password"></label>
-                    <input id="password-sign-in" type="password" name="password" placeholder="Password" required>
+                    <input id="password-sign-in" type="password" name="password" placeholder="Password" class="form-control validate" required>
                   </p>
                   <p>
                     <div class="sign-in-error"></div>
@@ -229,7 +265,7 @@
   
           </div>
         </div>
-      </div>
+      </div> -->
 
     <!-- Modal for sign-up  -->
     <div class="modal fade" id="modal-sign-up" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
@@ -282,46 +318,3 @@
     </div>
 </body>
 </html>
-
-<script type = "text/javascript">
-
-$(document).ready(function() {
-  // Modal appears when user clicks sign-in
-  $("#sign-in").on("click", function(event) {
-    event.preventDefault();
-    $("#modal-sign-in").modal("show");
-  });
-
-  // Modal appears when user clicks sign-up
-  $("#sign-up").on("click", function(event) {
-    event.preventDefault();
-    $("#modal-sign-up").modal("show");
-    $(".submit-sign-up").on("click", function() {
-      var password = $("#password-sign-up").val();
-      var confirm = $("#confirm-sign-up").val();
-      if (password !== confirm) {
-        $(".password-error").html("Passwords do not match.");
-        return false;
-      } 
-      var firstName = $("#fname").val().trim();
-      var lastName = $("#lname").val().trim();
-      var email= $("#email-sign-up").val().trim();
-
-    
-      var newCustomer = {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        password: password,
-        confirm: confirm
-      };
-      console.log(newCustomer);
-      // else {
-      //   submitNewCustomer(newCustomer);
-
-      $.post("/api/customers", newCustomer);
-    });
-  });
-});
-
-</script>
