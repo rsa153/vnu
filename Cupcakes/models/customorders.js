@@ -32,15 +32,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
-  CustomOrders.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
-    CustomOrders.belongsTo(models.Orders, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  // CustomOrders.associate = function(models) {
+  //   // We're saying that a Post should belong to an Author
+  //   // A Post can't be created without an Author due to the foreign key constraint
+  //   CustomOrders.belongsTo(models.Orders, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
 
   return CustomOrders;
 };
