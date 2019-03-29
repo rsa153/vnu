@@ -21,6 +21,10 @@ module.exports = function(sequelize, DataTypes) {
     totalPrice: {
       type: DataTypes.INTEGER,
       allowNull: false
+    },
+    specialInstructions: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   });
   Orders.associate = function(models) {
