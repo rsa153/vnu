@@ -1,0 +1,262 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Page</title>
+
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.git">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+        <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/inventory">Fresh Baked</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link active" href="/order">Order</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="/customize">Customize </a>
+                </li>
+         </ul>
+        <div class="container">
+                <div class="header jumbotron">
+                    <h1>Welcome To VNU Cupcakes</h1>
+                </div>
+        <div class="row">
+          <div class="col-md-12">
+          <p>Baked from scratch every morning for ultimate freshness. To order, just fill out the order form, and submit it to us and you will receive and email to finalize the order! Regular cupcakes can be ordered in amounts from half dozen to four dozen. Custom cupcakes  will vary based on order. <strong> Cost: $3.79 ea.</strong></p>     
+          </div>
+        </div>
+                
+        <form>
+            <div class="row">
+            <div class="form-group col-md-3">
+                
+                <label for ="orderDate"><strong>Order Date: </strong></label>
+                </div>                
+                <div class="form-group col-md-9">
+                   
+                    <input type="date" id="orderDate" class="form-control" >
+                </div>
+            <div class="form-group col-md-3"> 
+                <label for ="customerID"><strong>Customer ID: </strong></label>
+              </div>
+            <div class="form-group col-md-9">
+                <input type="text" class="form-control" id="customerID">
+              </div>
+              <div class="form-group col-md-3">
+                  <label for ="billingAddress"><strong>Billing Address: </strong></label>
+                  </div>
+              <div class="form-group col-md-9">
+                  <input type="text" class="form-control" id="billingAddress" required>
+              </div>
+              <div class="form-group col-md-3">
+                  <label for ="city"><strong>City: </strong></label>
+                  </div>
+              <div class="form-group col-md-9">
+                  <input type="text" class="form-control" id="city" required>
+              </div>
+              <div class="form-group col-md-3">
+                  <label for ="state"><strong>State: </strong></label>
+                  </div>
+              <div class="form-group col-md-9">
+                  <select id="state">
+                      <option value="AL">Alabama</option>
+                      <option value="AK">Alaska</option>
+                      <option value="AZ">Arizona</option>
+                      <option value="AR">Arkansas</option>
+                      <option value="CA">California</option>
+                      <option value="CO">Colorado</option>
+                      <option value="CT">Connecticut</option>
+                      <option value="DE">Delaware</option>
+                      <option value="DC">District Of Columbia</option>
+                      <option value="FL">Florida</option>
+                      <option value="GA">Georgia</option>
+                      <option value="HI">Hawaii</option>
+                      <option value="ID">Idaho</option>
+                      <option value="IL" selected>Illinois</option>
+                      <option value="IN">Indiana</option>
+                      <option value="IA">Iowa</option>
+                      <option value="KS">Kansas</option>
+                      <option value="KY">Kentucky</option>
+                      <option value="LA">Louisiana</option>
+                      <option value="ME">Maine</option>
+                      <option value="MD">Maryland</option>
+                      <option value="MA">Massachusetts</option>
+                      <option value="MI">Michigan</option>
+                      <option value="MN">Minnesota</option>
+                      <option value="MS">Mississippi</option>
+                      <option value="MO">Missouri</option>
+                      <option value="MT">Montana</option>
+                      <option value="NE">Nebraska</option>
+                      <option value="NV">Nevada</option>
+                      <option value="NH">New Hampshire</option>
+                      <option value="NJ">New Jersey</option>
+                      <option value="NM">New Mexico</option>
+                      <option value="NY">New York</option>
+                      <option value="NC">North Carolina</option>
+                      <option value="ND">North Dakota</option>
+                      <option value="OH">Ohio</option>
+                      <option value="OK">Oklahoma</option>
+                      <option value="OR">Oregon</option>
+                      <option value="PA">Pennsylvania</option>
+                      <option value="RI">Rhode Island</option>
+                      <option value="SC">South Carolina</option>
+                      <option value="SD">South Dakota</option>
+                      <option value="TN">Tennessee</option>
+                      <option value="TX">Texas</option>
+                      <option value="UT">Utah</option>
+                      <option value="VT">Vermont</option>
+                      <option value="VA">Virginia</option>
+                      <option value="WA">Washington</option>
+                      <option value="WV">West Virginia</option>
+                      <option value="WI">Wisconsin</option>
+                      <option value="WY">Wyoming</option>
+                    </select>
+              </div>
+            <div class="form-group col-md-3">
+                <label for ="email"><strong>Email Address </strong></label>
+                </div>
+            <div class="form-group col-md-9">
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group col-md-3">
+                <label for ="pickupDate"><strong>Pick Up Date: </strong></label>
+                <small class="form-text text-muted">Please allow at least 2 business days from order date. </small>
+                </div>                  
+                  <div class="form-group col-md-9">
+                      <input type="date" class="form-control" id="pickupDate" required>
+                  </div>
+                    
+                <div class="form-group col-md-3">
+                    <label for = "cupcakeType"><strong>Cupcake Type:</strong> </label>
+                    </div>
+                    <div class="form-group col-md-9">
+                        <select name ="cupcakeType" id="cupcakeType" required>
+                            <option value="">--Please choose an option--</option>
+                            <option value="oreo">Oreo Cupcake</option>
+                            <option value="redVelvet">Red Velvet</option>
+                            <option value="dblChocolate">Double Chocolate</option>
+                            <option value="funfetti">Funfetti</option>
+                            <option value="smores">S'mores</option>
+                            <option value="vanilla">Vanilla</option>
+                            <option value="strawberry">Strawberry</option>
+                            <option value="cApple">Caramel Apple</option>
+                         </select>  
+                    </div>
+                <div class="form-group col-md-3">
+                    <label for="quantity"><strong>Quantity Needed:</strong></label>
+                    </div>
+                 <div class="form-group col-md-9">
+                        <select name="quantity" id="quantity" required>
+                            <option value="">--Please choose an option--</option>
+                            <option value="6">1/2 dozen</option> 
+                            <option value="12">1 dozen</option>
+                            <option value="24">2 dozen</option>
+                            <option value="36">3 dozen</option>
+                            <option value="48">4 dozen</option>
+                          </select>
+                 </div>
+                <div class="form-group col-md-3">
+                    <label for ="instructions"><strong>Special Instructions? </strong></label>
+                </div> 
+                <div class="form-group col-md-9">
+                    <textarea id="instructions" cols="100" rows="5"></textarea>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="totalPrice"><strong>Total  Price: </strong> </label>                  
+              </div>
+              <div class="form-group col-md-9">
+                <!-- This field will be a calualtion (quantity * price) -->
+              <input type="number" class="form-control" id="totalPrice">
+              </div>
+              <hr>
+              <div class="col-md-12"><p>Please enter your credit card card information.</p></div>
+                    
+                      <div class="form-group col-md-3">
+                        <label for ="cc"><strong>Select Card:</strong></label>                       
+                      </div>
+            <div class="form-group col-md-9">
+                <select name="credit" id="credit" required>
+                    <option value="">--Please choose an option--</option>
+                    <option value="MC">Mastercard</option> 
+                    <option value="VS">Visa</option>
+                    <option value="AX">American Express</option>
+                    <option value="DS">Discover</option>                           
+                  </select>
+                </div>
+            <div class="form-group col-md-3">
+                <label for ="cc"><strong>Credit Card Number:</strong></label>  
+                  
+            </div> 
+            <div class="form-group col-md-9">
+                <input type="text" class="form-control" id="cardNumber" required>
+            </div>    
+        <div class = "form-group col-md-3"><label for ="cvc"><strong>CVC:</strong></label></div>
+        <div class = "form-group col-md-9">
+          <input type="text" class = "form-control" id="cvc" required>
+        </div>
+        <div class = "form-group col-md-3"><label for ="exDate"><strong>Expiration Date:</strong></label></div>
+        <div class = "form-group col-md-9">
+          <input type="date" class = "form-control" id="exDate" required>
+        </div>
+      <div class="form-group col-md-9"><button type="submit" class="btn btn-primary id" id="submit">Submit</button></div>                                         
+               </div>        
+        </div>                  
+              </form>
+              <script>
+                  //Get Values from form
+    $("#submit").on("click", function(event){
+        // event.preventDefault();           
+
+      var orderData = {
+         date: $("#orderDate").val(),
+         customerID: $("#customerID").val().trim(),
+         billingAddress: $("#billingAddress").val().trim(),
+         city: $("#billingAddress").val().trim(),
+         state: $("#state option:selected").text(),
+         email: $("#email").val().trim(),
+<<<<<<< HEAD:Cupcakes/public/views/order.html
+         pickupDate: $("") 
+      };
+                      </script>
+=======
+         pickupDate: $("#pickupDate").val(),
+         cupcakeType:$("#cupcakeType option:selected").text(),
+         quantity: $("#quantity").val(),
+         specialInstructions: $("#instructions").val().trim(),
+         price: $("#price").val(), 
+         card: $("#credit").val().trim(),
+         cardNumber: $("#cardNumber").val().trim(),
+         cvc: $("#cvc").val().trim(),
+         expirationDate: $("#exDate").val()
+      }
+      console.log(orderData);
+    });
+    
+   let today = new Date().toISOString().substr(0, 10);
+   document.querySelector("#orderDate").value = today;  
+  
+      </script>
+>>>>>>> c98a7519d719daad92b532e3c926f6d38aabc30d:order.html
+                      
+</body>
+
+<footer>
+
+</footer>
+
+</html>
+
