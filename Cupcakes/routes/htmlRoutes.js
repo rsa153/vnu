@@ -2,29 +2,33 @@ var path = require("path");
 
 module.exports = function(app) {
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/views/home.html"));
+    res.sendFile(path.join(__dirname, "../Cupcakes/public/views/home.html"));
   });
   //Carousel became about page
   // app.get("/about", function(req, res) {
   //   res.sendFile(path.join(__dirname, "../public/views/about.html"));
   // });
   app.get("/inventory", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/views/inventory.html"));
+    res.sendFile(
+      path.join(__dirname, "../Cupcakes/public/views/inventory.html")
+    );
   });
 
   app.get("/order", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/views/order.html"));
+    res.sendFile(path.join(__dirname, "../Cupcakes/public/views/order.html"));
   });
   app.get("/custom", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/views/customization.html"));
+    res.sendFile(
+      path.join(__dirname, "../Cupcakes/public/views/customization.html")
+    );
   });
   app.get("/test", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/views/test.html"));
+    res.sendFile(path.join(__dirname, "../Cupcakes/public/views/test.html"));
   });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/views/home.html"));
+    res.sendFile(path.join(__dirname, "../Cupcakes/public/views/home.html"));
   });
 };
 
