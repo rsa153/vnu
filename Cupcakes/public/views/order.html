@@ -43,34 +43,34 @@
         <form action="/api/orders" method="POST" id="orderForm">
             <div class="row">
             <div class="form-group col-md-3">
-                <label for ="orderDate"><strong>Order Date: </strong></label>
+                <label for ="order"><strong>Order Date: </strong></label>
                 </div>
                 <div class="form-group col-md-9">
-                    <input type="date" class="form-control" id="orderDate">
+                    <input type="date" class="form-control" id="date" name="date">
                 </div>
             <div class="form-group col-md-3"> 
                 <label for ="customerID"><strong>Customer ID: </strong></label>
               </div>
             <div class="form-group col-md-9">
-                <input type="number" class="form-control" id="customerID">
+                <input type="number" class="form-control" id="customerID" name="customerID">
               </div>
               <div class="form-group col-md-3">
                   <label for ="billingAddress"><strong>Billing Address: </strong></label>
                   </div>
               <div class="form-group col-md-9">
-                  <input type="text" class="form-control" id="billingAddress" required>
+                  <input type="text" class="form-control" id="billingAddress" name="billingAddress" required>
               </div>
               <div class="form-group col-md-3">
                   <label for ="city"><strong>City: </strong></label>
                   </div>
               <div class="form-group col-md-9">
-                  <input type="text" class="form-control" id="city" required>
+                  <input type="text" class="form-control" id="city" name="city" required>
               </div>
               <div class="form-group col-md-3">
                   <label for ="state"><strong>State: </strong></label>
                   </div>
               <div class="form-group col-md-9">
-                  <select id="state">
+                  <select id="state" name="state">
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
                       <option value="AZ">Arizona</option>
@@ -128,14 +128,14 @@
                 <label for ="email"><strong>Email Address </strong></label>
                 </div>
             <div class="form-group col-md-9">
-                <input type="email" class="form-control" id="email">
+                <input type="email" class="form-control" id="email" name="email">
             </div>
             <div class="form-group col-md-3">
                 <label for ="pickupDate"><strong>Pick Up Date: </strong></label>
                 <small class="form-text text-muted">Please allow at least 2 business days from order date. </small>
                 </div>                  
                   <div class="form-group col-md-9">
-                      <input type="date" class="form-control" id="pickupDate">
+                      <input type="date" class="form-control" id="pickupDate" name="pickupDate">
                   </div>
                     
                 <div class="form-group col-md-3">
@@ -178,7 +178,7 @@
               </div>
               <div class="form-group col-md-9">
                 <!-- This field will be a calualtion (quantity * price) -->
-              <input type="number" class="form-control" id="totalPrice">
+              <input type="number" class="form-control" id="totalPrice" name="totalPrice">
               </div>
               <hr>
               <div class="col-md-12"><p>Please enter your credit card card information.</p></div>
@@ -187,7 +187,7 @@
                         <label for ="cc"><strong>Select Card:</strong></label>                       
                       </div>
                       <div class="form-group col-md-9">
-                          <select name="credit" id="credit">
+                          <select name="card" id="card">
                             <option value="">Make Selection</option>
                             <option value="MC">Mastercard</option> 
                               <option value="VS">Visa</option>
@@ -200,11 +200,11 @@
                            
                       </div> 
                       <div class="form-group col-md-9">
-                          <input type="text" class="form-control" id="cardNumber"> 
+                          <input type="text" class="form-control" id="cardNumber" name="cardNumber"> 
                       </div>    
                   <div class = "form-group col-md-3"><label for ="cvc"><strong>CVC:</strong></label></div>
                   <div class = "form-group col-md-9">
-                    <input type="text" class = "form-control" id="cvc">
+                    <input type="text" class = "form-control" id="cvc" name="cvc">
                   </div>
                 <div class="form-group col-md-9"><button type="submit" class="btn btn-primary id" id="submit">Submit</button></div>                                         
                </div>        
@@ -216,20 +216,21 @@
                       // event.preventDefault();
                       //   // event.preventDefault();           
       var orderData = {
-         date: $("#orderDate").val(),
-         customerID: $("#customerID").val().trim(),
-         billingAddress: $("#billingAddress").val().trim(),
-         city: $("#city").val().trim(),
+         orderDate: $("#orderDate").val(),
+        //  customerID: $("#customerID").val(),
+         billingAddress: $("#billingAddress").val(),
+         city: $("#city").val(),
          state: $("#state option:selected").text(),
-         email: $("#email").val().trim(),
+         email: $("#email").val(),
          pickupDate: $("#pickupDate").val(),
          cupcakeType:$("#cupcakeType option:selected").text(),
+
          quantity: $("#quantity").val(),
-         specialInstructions: $("#instructions").val().trim(),
-         price: $("#totalPrice").val(), 
-         card: $("#credit").val(),
-         cardNumber: $("#cardNumber").val().trim(),
-         cvc: $("#cvc").val().trim(),
+         specialInstructions: $("#instructions").val(),
+         totalPrice: $("#totalPrice").val(), 
+         card: $("#card").val(),
+         cardNumber: $("#cardNumber").val(),
+         cvc: $("#cvc").val(),
                }
       console.log(orderData);
       // $.post('/api/orders', orderData)
