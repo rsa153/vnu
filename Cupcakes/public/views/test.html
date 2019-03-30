@@ -61,10 +61,8 @@
 </html>
 
 <script type="text/javascript">
-  $(document).ready(function () {
-    $("#sign-up").on("click", function (event) {
+  $(document).ready(function (event) {
       event.preventDefault();
-      $("#modal-sign-up").modal("show");
       $(".submit-sign-up").on("click", function () {
         var password = $("#password-sign-up").val();
         var confirm = $("#confirm-sign-up").val();
@@ -88,5 +86,4 @@
         $.post("/api/customers", newCustomer);
       });
     });
-  });
 </script>
