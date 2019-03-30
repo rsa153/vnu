@@ -16,26 +16,21 @@ module.exports = function(sequelize, DataTypes) {
     },
     ingredients: {
       type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      lowercase: true,
-      validate: {
-        len: [1, 1000],
-        isEmail: {
-          msg: "Email address must be valid"
-        },
-        notEmpty: true
-      }
+      allowNull: false
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   });
-  Inventory.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
-    Inventory.belongsTo(models.Manager, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  // Inventory.associate = function(models) {
+  //   // We're saying that a Post should belong to an Author
+  //   // A Post can't be created without an Author due to the foreign key constraint
+  //   Inventory.belongsTo(models.Manager, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
   return Inventory;
 };

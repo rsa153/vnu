@@ -1,7 +1,6 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Find all Authors and return them to the user with res.json
   app.get("/api/customers", function(req, res) {
     db.Customers.findAll({}).then(function(dbCustomers) {
       res.json(dbCustomers);
@@ -9,7 +8,6 @@ module.exports = function(app) {
   });
 
   app.get("/api/customers/:id", function(req, res) {
-    // Find one Author with the id in req.params.id and return them to the user with res.json
     db.Customers.findOne({
       where: {
         id: req.params.id
@@ -20,15 +18,37 @@ module.exports = function(app) {
   });
 
   app.post("/api/customers", function(req, res) {
-    // Create an Author with the data available to us in req.body
     console.log(req.body);
-    db.Customers.create({
-      where: {
-        id: req.params.id,
-        firstName: req.params.firstName
-      }
-    }).then(function(dbCustomers) {
+    db.Customers.create(req.body).then(function(dbCustomers) {
+      console.log(dbCustomers);
       res.json(dbCustomers);
     });
   });
+
+  app.post("/api/orders", function(req,res) {
+    console.log(req.body);
+    
+    db.orders.create({
+      date: req.body.date,
+      billingAddress: req.body.billingAddress,
+      city: req.body.city,
+      state: req.body.state,
+      email: req.body.email,
+      cupcakeType: req.body.cupcakeType,
+      quantity: req.body.quantity,
+      specialInstructions: req.body.specialInstructions,
+      totalPrice: req.body.totalPrice,
+      card: req.body.card,
+      cardNumber: req.body.cardNumber,
+      cvc: req.body.cvc,
+      CustomerID: req.body.CustomerID
+    })
+      .then(function(dbOrders){
+      console.log(dbOrders);
+      res.json(dbOrders);
+    });
+  
+  });
+
+
 };

@@ -7,3 +7,7 @@ Values ("Oreo Cupcake", 25, "Oreo, milk, eggs, flour, salt, sugar, baking powder
 ("Strawberry", 25, "Strarberry, milk, eggs, flour, salt, sugar, baking powder"),
 ("Vanilla", 25, "Vanilla, milk, eggs, flour, salt, sugar, baking powder"),
 ("Funfetti", 25, "Funfetti, milk, eggs, flour, salt, sugar, baking powder");
+
+INSERT INTO Customers(firstName, lastName, email, password, confirm)
+Values("test", "test", "test", "test", "test")
+
