@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -21,44 +20,46 @@
 </head>
 
 <body>
-</body>
-<div class="container">
-  <div class="row">
-    <div class="column">
-      <form class="cmxform" id="form-sign-up" method="get" action="">
-        <fieldset>
-          <p>
-            <label for="fname"></label>
-            <input id="fname" name="fname" minlength="2" type="text" placeholder="First Name" required>
-          </p>
-          <p>
-            <label for="lname"></label>
-            <input id="lname" name="lname" minlength="2" type="text" placeholder="Last Name" required>
-          </p>
-          <p>
-            <label for="email"></label>
-            <input id="email-sign-up" type="email" name="email" placeholder="Email" required>
-          </p>
-          <p>
-            <label for="password"></label>
-            <input id="password-sign-up" type="password" name="password" placeholder="Password" required>
-          </p>
-          <p>
-            <label for="password"></label>
-            <input id="confirm-sign-up" type="password" name="confirm" placeholder="Re-Enter Password" required>
-          </p>
-          <p>
-            <div class="password-error"></div>
-            <input class="submit-sign-up" type="submit" value="Sign me up and Sign me in!">
-          </p>
-        </fieldset>
-      </form>
+
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <form class="cmxform" id="form-sign-up" method="get" action="">
+          <fieldset>
+            <p>
+              <label for="fname"></label>
+              <input id="fname" name="fname" minlength="2" type="text" placeholder="First Name" required>
+            </p>
+            <p>
+              <label for="lname"></label>
+              <input id="lname" name="lname" minlength="2" type="text" placeholder="Last Name" required>
+            </p>
+            <p>
+              <label for="email"></label>
+              <input id="email-sign-up" type="email" name="email" placeholder="Email" required>
+            </p>
+            <p>
+              <label for="password"></label>
+              <input id="password-sign-up" type="password" name="password" placeholder="Password" required>
+            </p>
+            <p>
+              <label for="password"></label>
+              <input id="confirm-sign-up" type="password" name="confirm" placeholder="Re-Enter Password" required>
+            </p>
+            <p>
+              <div class="password-error"></div>
+              <input class="submit-sign-up" type="submit" value="Sign me up and Sign me in!">
+            </p>
+          </fieldset>
+        </form>
+      </div>
     </div>
   </div>
-</div>
+</body>
 
+</html>
 
-  <script type="text/javascript">
+<script type="text/javascript">
   $(document).ready(function () {
     $("#sign-up").on("click", function (event) {
       event.preventDefault();
@@ -87,4 +88,4 @@
       });
     });
   });
-  </script>
+</script>
