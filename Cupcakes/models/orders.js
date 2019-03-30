@@ -2,8 +2,8 @@ module.exports = function(sequelize, DataTypes) {
   var Orders = sequelize.define("Orders", {
 
     date: {
-      type: DataTypes.DATEONLY,
-      allowNull: false
+      type: DataTypes.STRING,
+      // allowNull: false
     },
 
     // customerID: {
@@ -13,65 +13,69 @@ module.exports = function(sequelize, DataTypes) {
 
     billingAddress: {
       type: DataTypes.STRING,
-      allowNull: false,      
+      // allowNull: false,      
     },
 
   city: {
     type: DataTypes.STRING,
-    allowNull: false, 
+    // allowNull: false, 
     },
 
    state: {
       type: DataTypes.STRING,
-      allowNull: false, 
+      // allowNull: false, 
       }, 
     
     email: {
         type: DataTypes.STRING,
-        allowNull: false,
+        // allowNull: false,
         // validate: {
         //   isEmail: true
         //   } 
         }, 
 
     cupcakeType: {
-      type: DataTypes.TEXT,
-      allowNull: false,
+      type: DataTypes.STRING,
+      // allowNull: false,
       validate: {
         len: [1, 140]
       }
     },
     quantity: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      // allowNull: false,
       validate: {
         len: [1, 10]
       }
     },
+    pickupDate: {
+      type: DataTypes.DATEONLY,
+      // allowNull: false
+    },
     specialInstructions: {
       type: DataTypes.STRING,
-      allowNull: false
+      // allowNull: false
     },
     
     totalPrice: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      // allowNull: false
     },
     card: {
       type: DataTypes.TEXT,
-      allowNull: false
+      // allowNull: false
     },
     cardNumber: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      // allowNull: false,
       },
     cvc: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        min: 3,
-        max: 3
-      }
+      // allowNull: false,
+      // validate: {
+      //   min: 3,
+      //   max: 3
+      // }
     },
    
   });
