@@ -16,16 +16,11 @@ module.exports = function(sequelize, DataTypes) {
     },
     ingredients: {
       type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      lowercase: true,
-      validate: {
-        len: [1, 1000],
-        isEmail: {
-          msg: "Email address must be valid"
-        },
-        notEmpty: true
-      }
+      allowNull: false
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   });
   // Inventory.associate = function(models) {
