@@ -8,12 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.git">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<<<<<<< HEAD:Cupcakes/public/views/order.html
-  <link rel="stylesheet" type="text/css" media="screen" href="Cupcakes/public/styles/styles.css" />
-  <script src="index.js"></script>
-=======
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
->>>>>>> c98a7519d719daad92b532e3c926f6d38aabc30d:order.html
 
 </head>
 

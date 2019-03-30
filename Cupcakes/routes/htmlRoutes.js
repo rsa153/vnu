@@ -4,9 +4,10 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/views/home.html"));
   });
-  app.get("/about", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/views/about.html"));
-  });
+  //Carousel became about page
+  // app.get("/about", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/views/about.html"));
+  // });
   app.get("/inventory", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/views/inventory.html"));
   });
