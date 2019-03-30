@@ -8,15 +8,21 @@
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": "jacEl6509",
-    "database": "testdb",
-    "host": "localhost",
+    "username": "a6nz6l3j99dwo0mt",
+    "password": "ob0bfrztvz28mgfc",
+    "database": "asvxspp4p5d3u4j2",
+    "host": "a5s42n4idx9husyc.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
+    "port": 3306,
     "logging": false
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "host": "muowdopceqgxjn2b.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "tukcnbyfqtzisg45",
+    "password": "an3j6l1od4lz172t",
+    "port": 3306,
+    "database": "ultp41z7tcnh20r9"
   }
 }
