@@ -10,7 +10,9 @@ module.exports = function(app) {
   app.get("/api/customers/:id", function(req, res) {
     db.Customers.findOne({
       where: {
-        id: req.params.id
+        id: req.params.id,
+        email: req.params.email,
+        password: req.params.password
       }
     }).then(function(dbCustomers) {
       res.json(dbCustomers);
