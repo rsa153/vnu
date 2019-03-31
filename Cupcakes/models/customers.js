@@ -3,20 +3,21 @@ module.exports = function(sequelize, DataTypes) {
     firstName: {
       type: DataTypes.TEXT,
       allowNull: false
-      // validate: {
-      //   len: [1, 140]
-      // }
     },
     lastName: {
       type: DataTypes.TEXT,
       allowNull: false
-      // validate: {
-      //   len: [1, 140]
-      // }
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        isEmail: true
+      },
+      unique: {
+        args: true,
+        msg: "Email address already in use!"
+      }
     },
     password: {
       type: DataTypes.STRING,

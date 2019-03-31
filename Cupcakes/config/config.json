@@ -1,20 +1,15 @@
 {
   "development": {
     "username": "root",
-    "password": "jacEl6509",
+    "password": "password",
     "database": "cupcakes",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
   },
   "test": {
-    "username": "a6nz6l3j99dwo0mt",
-    "password": "ob0bfrztvz28mgfc",
-    "database": "asvxspp4p5d3u4j2",
-    "host": "a5s42n4idx9husyc.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "mysql",
-    "port": 3306,
-    "logging": false
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",
