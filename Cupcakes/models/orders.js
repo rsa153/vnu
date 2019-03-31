@@ -1,38 +1,37 @@
 module.exports = function(sequelize, DataTypes) {
   var Orders = sequelize.define("Orders", {
-
     date: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
       // allowNull: false
     },
 
     // customerID: {
     //   type: DataTypes.INTEGER,
-    //   allowNull: true,     
+    //   allowNull: true,
     // },
 
     billingAddress: {
-      type: DataTypes.STRING,
-      // allowNull: false,      
+      type: DataTypes.STRING
+      // allowNull: false,
     },
 
-  city: {
-    type: DataTypes.STRING,
-    // allowNull: false, 
+    city: {
+      type: DataTypes.STRING
+      // allowNull: false,
     },
 
-   state: {
-      type: DataTypes.STRING,
-      // allowNull: false, 
-      }, 
-    
+    state: {
+      type: DataTypes.STRING
+      // allowNull: false,
+    },
+
     email: {
-        type: DataTypes.STRING,
-        // allowNull: false,
-        // validate: {
-        //   isEmail: true
-        //   } 
-        }, 
+      type: DataTypes.STRING
+      // allowNull: false,
+      // validate: {
+      //   isEmail: true
+      //   }
+    },
 
     cupcakeType: {
       type: DataTypes.STRING,
@@ -49,35 +48,34 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     pickupDate: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.DATEONLY
       // allowNull: false
     },
     specialInstructions: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
       // allowNull: false
     },
-    
+
     totalPrice: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
       // allowNull: false
     },
     card: {
-      type: DataTypes.TEXT,
+      type: DataTypes.TEXT
       // allowNull: false
     },
     cardNumber: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
       // allowNull: false,
-      },
+    },
     cvc: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
       // allowNull: false,
       // validate: {
       //   min: 3,
       //   max: 3
       // }
-    },
-   
+    }
   });
   // Orders.associate = function(models) {
   //   // We're saying that a Post should belong to an Author
