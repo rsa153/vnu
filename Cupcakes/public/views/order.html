@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,34 +13,23 @@
 
 </head>
 <body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light light-blue bg-light">
-        <a class="navbar-brand" href="home.html"><i class="fas fa-home fa-lg"> Auntie's</i></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="../views/home.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="../views/order.html">Order <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="../views/home.html">Sign-up <span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-
+        <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link" href="/home">Home</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href="/inventory">Fresh Baked</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link active" href="/order">Order</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="/customization">Customize </a>
+                        </li>
+            </ul>
         <div class="container">
                 <div class="header jumbotron">
                     <h1>Order VNU Cupcakes</h1>
@@ -163,34 +151,28 @@
                             <option value="smores">S'mores</option>
                             <option value="vanilla">Vanilla</option>
                             <option value="strawberry">Strawberry</option>
-                            <option value="cApple">Caramel Apple</option>
+                            <option value="Apple">Caramel Apple</option>
                          </select>  
                     </div>
                 <div class="form-group col-md-3">
                     <label for="quantity"><strong>Quantity Needed:</strong></label>
                     </div>
                  <div class="form-group col-md-9">
-                        <select name="quantity" id="quantity">
-                            <option value="">Make Selection</option>
-                            <option value="6">1/2 dozen</option> 
-                            <option value="12">1 dozen</option>
-                            <option value="24">2 dozen</option>
-                            <option value="36">3 dozen</option>
-                            <option value="48">4 dozen</option>
-                          </select>
+                  <input type="text" class="form-control" id="quantity" name="quantity">
+
                  </div>
                 <div class="form-group col-md-3">
                     <label for ="instructions"><strong>Special Instructions? </strong></label>
                 </div> 
                 <div class="form-group col-md-9">
-                    <textarea name="instructions" cols="100" rows="5" id="instructions"></textarea>
+                    <textarea name="instructions" cols="100" rows="5" id="instructions">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."</textarea>
                 </div>
                 <div class="form-group col-md-3">
                   <label for="totalPrice"><strong>Price: </strong> </label>                  
               </div>
               <div class="form-group col-md-9">
                 <!-- This field will be a calualtion (quantity * price) -->
-              <input type="number" class="form-control" id="totalPrice" name="totalPrice">
+              <p id="totalPrice" name="totalPrice"></p>
               </div>
               <hr>
               <div class="col-md-12"><p>Please enter your credit card card information.</p></div>
@@ -222,15 +204,13 @@
                </div>        
         </div>                  
               </form>
-
-     <!--- Start of Form-->
               <script>
                   //Get Values from form
           $("#submit").on("click", function(event){
                       // event.preventDefault();
                       //   // event.preventDefault();           
       var orderData = {
-         orderDate: $("#orderDate").val(),
+         date: $("#date").val(),
         //  customerID: $("#customerID").val(),
          billingAddress: $("#billingAddress").val(),
          city: $("#city").val(),
@@ -238,7 +218,6 @@
          email: $("#email").val(),
          pickupDate: $("#pickupDate").val(),
          cupcakeType:$("#cupcakeType option:selected").text(),
-
          quantity: $("#quantity").val(),
          specialInstructions: $("#instructions").val(),
          totalPrice: $("#totalPrice").val(), 
@@ -252,30 +231,12 @@
         // .catch
     });
     let today = new Date().toISOString().substr(0,10);
-    document.querySelector("#orderDate").value = today;
+    document.querySelector("#date").value = today;
+
     /// Dynamic Totals
-    var cakePrice = 3.79;
-    var orderSize = new Array ();
-     orderSize["6"]= 6;
-     orderSize["12"]= 12;
-     orderSize["24"]= 24;
-     orderSize["36"]= 36;
-     orderSize["48"]= 48;
-     function totalPrice(){
-    var totalPrice =0;   
-    var myForm = document.forms["orderForm"];
-    var selectSize = myForm.elements["quantity"];
-    totalPrice = selectSize * cakePrice;
-    document.getElementById('totalPrice').value = "$" + totalPrice;
-    // return totalPrice;   
-     }
-     totalPrice();
-                      </script>
-                      
+    
+      </script>                      
 </body>
-
 <footer>
-
 </footer>
-
 </html>
