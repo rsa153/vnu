@@ -25,13 +25,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="../pages/home.html">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="/home">Home</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="../pages/order.html">Order <span class="sr-only">(current)</span></a>
+                   <a class="nav-link" href="/inventory">Fresh Baked</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="../pages/home.html">Sign-up <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="/about">About Us</a>
+            </li>
+            <li class="nav-item active">
+                  <a class="nav-link active" href="/order">Order</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
@@ -162,35 +165,30 @@
                             <option value="smores">S'mores</option>
                             <option value="vanilla">Vanilla</option>
                             <option value="strawberry">Strawberry</option>
-                            <option value="cApple">Caramel Apple</option>
+                            <option value="Apple">Caramel Apple</option>
                          </select>  
                     </div>
                 <div class="form-group col-md-3">
                     <label for="quantity"><strong>Quantity Needed:</strong></label>
                     </div>
                  <div class="form-group col-md-9">
-                        <select name="quantity" id="quantity">
-                            <option value="">Make Selection</option>
-                            <option value="6">1/2 dozen</option> 
-                            <option value="12">1 dozen</option>
-                            <option value="24">2 dozen</option>
-                            <option value="36">3 dozen</option>
-                            <option value="48">4 dozen</option>
-                          </select>
+                  <input type="text" class="form-control" id="quantity" name="quantity">
+
                  </div>
                 <div class="form-group col-md-3">
-                    <label for ="instructions"><strong>Special Instructions? </strong></label>
+                    <label for ="specialInstructions"><strong>Special Instructions? </strong></label>
                 </div> 
                 <div class="form-group col-md-9">
-                    <textarea name="instructions" cols="100" rows="5" id="instructions"></textarea>
+                    <textarea name="specialInstructions" cols="100" rows="5" id="specialInstructions">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."</textarea>
                 </div>
                 <div class="form-group col-md-3">
-                  <label for="totalPrice"><strong>Price: </strong> </label>                  
+                  <label for="totalPrice"><strong>Your Order Total is $: </strong> </label>                  
               </div>
               <div class="form-group col-md-9">
                 <!-- This field will be a calualtion (quantity * price) -->
-              <input type="number" class="form-control" id="totalPrice" name="totalPrice">
+                <input type="text" class="form-control" id="totalPrice" name="totalPrice">
               </div>
+              
               <hr>
               <div class="col-md-12"><p>Please enter your credit card card information.</p></div>
                     
@@ -221,15 +219,13 @@
                </div>        
         </div>                  
               </form>
-
-     <!--- Start of Form-->
               <script>
                   //Get Values from form
           $("#submit").on("click", function(event){
                       // event.preventDefault();
                       //   // event.preventDefault();           
       var orderData = {
-         orderDate: $("#orderDate").val(),
+         date: $("#date").val(),
         //  customerID: $("#customerID").val(),
          billingAddress: $("#billingAddress").val(),
          city: $("#city").val(),
@@ -237,7 +233,6 @@
          email: $("#email").val(),
          pickupDate: $("#pickupDate").val(),
          cupcakeType:$("#cupcakeType option:selected").text(),
-
          quantity: $("#quantity").val(),
          specialInstructions: $("#instructions").val(),
          totalPrice: $("#totalPrice").val(), 
@@ -251,30 +246,31 @@
         // .catch
     });
     let today = new Date().toISOString().substr(0,10);
-    document.querySelector("#orderDate").value = today;
+    document.querySelector("#date").value = today;
+
     /// Dynamic Totals
-    var cakePrice = 3.79;
-    var orderSize = new Array ();
-     orderSize["6"]= 6;
-     orderSize["12"]= 12;
-     orderSize["24"]= 24;
-     orderSize["36"]= 36;
-     orderSize["48"]= 48;
-     function totalPrice(){
-    var totalPrice =0;   
-    var myForm = document.forms["orderForm"];
-    var selectSize = myForm.elements["quantity"];
-    totalPrice = selectSize * cakePrice;
-    document.getElementById('totalPrice').value = "$" + totalPrice;
-    // return totalPrice;   
-     }
-     totalPrice();
-                      </script>
-                      
+
+          var first = document.getElementById('quantity');     
+          
+          first.addEventListener("input", sum);
+           
+          function sum() {            
+          var one = parseFloat(first.value) || 0.00;
+          var add = one * 3.79;
+          add = add.toFixed(2);         
+          document.getElementById("totalPrice").value = add;
+          result
+          };  
+
+      /// return thank you page        
+//           window.onload=function() {
+//           document.getElementById("orderForm").onsubmit=function() {
+//           window.location.replace("thanks.html");
+//           return false;
+//           }
+// }
+      </script>                      
 </body>
-
 <footer>
-
 </footer>
-
 </html>
