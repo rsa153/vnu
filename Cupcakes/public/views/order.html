@@ -162,18 +162,19 @@
 
                  </div>
                 <div class="form-group col-md-3">
-                    <label for ="instructions"><strong>Special Instructions? </strong></label>
+                    <label for ="specialInstructions"><strong>Special Instructions? </strong></label>
                 </div> 
                 <div class="form-group col-md-9">
-                    <textarea name="instructions" cols="100" rows="5" id="instructions">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."</textarea>
+                    <textarea name="specialInstructions" cols="100" rows="5" id="specialInstructions">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."</textarea>
                 </div>
                 <div class="form-group col-md-3">
-                  <label for="totalPrice"><strong>Price: </strong> </label>                  
+                  <label for="totalPrice"><strong>Your Order Total is $: </strong> </label>                  
               </div>
               <div class="form-group col-md-9">
                 <!-- This field will be a calualtion (quantity * price) -->
-              <p id="totalPrice" name="totalPrice"></p>
+                <input type="text" class="form-control" id="totalPrice" name="totalPrice">
               </div>
+              
               <hr>
               <div class="col-md-12"><p>Please enter your credit card card information.</p></div>
                     
@@ -234,6 +235,19 @@
     document.querySelector("#date").value = today;
 
     /// Dynamic Totals
+
+          var first = document.getElementById('quantity');     
+          
+          first.addEventListener("input", sum);
+           
+          function sum() {            
+          var one = parseFloat(first.value) || 0.00;
+          var add = one * 3.79;
+          add = add.toFixed(2);         
+          document.getElementById("totalPrice").value = add;
+          result
+          };        
+                  
     
       </script>                      
 </body>
