@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
 
     // customerID: {
     //   type: DataTypes.INTEGER,
-    //   allowNull: true
+    //   allowNull: true,
     // },
 
     billingAddress: {
