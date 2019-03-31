@@ -32,6 +32,26 @@ module.exports = function(app) {
         console.log(dbOrders);
         res.json(dbOrders);
       })
-     
+      .then(function(dbOrders) {
+        console.log(dbOrders);
+        res.json(dbOrders);
+      });
   });
 };
+
+//     db.orders
+//       .create({
+//         date: req.body.date,
+//         billingAddress: req.body.billingAddress,
+//         city: req.body.city,
+//         state: req.body.state,
+//         email: req.body.email,
+//         cupcakeType: req.body.cupcakeType,
+//         quantity: req.body.quantity,
+//         specialInstructions: req.body.specialInstructions,
+//         totalPrice: req.body.totalPrice,
+//         card: req.body.card,
+//         cardNumber: req.body.cardNumber,
+//         cvc: req.body.cvc,
+//         CustomerID: req.body.CustomerID
+//       })
