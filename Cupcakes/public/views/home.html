@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" media="screen" href="../styles/home.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
@@ -34,17 +34,6 @@
         <li class="nav-item active">
           <a class="nav-link" href="../home">Home <span class="sr-only"></span></a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="/inventory">Fresh Baked</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="/about">About Us</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="../order">Order <span class="sr-only"></span></a>
-        </li>
-        <li class="nav-item active">
-
         </li>
       </ul>
     </div>
@@ -52,6 +41,7 @@
 
   <!--Carousel -->
   <div class="container">
+    <div class="password-error"></div>
     <div id="cupcakeIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="cupcakes" data-slide-to="0" class="active"></li>
@@ -239,11 +229,12 @@
                 <form class="cmxform" id="form-sign-in" method="get" action="">
                   <fieldset>
                     <label for="email"></label>
-                    <input id="email" type="email" name="email" placeholder="Email" required>
+                    <input id="email-sign-in" type="email" name="email-sign-in" placeholder="Email" required>
                     </p>
                     <p>
                       <label for="password"></label>
-                      <input id="password-sign-in" type="password" name="password" placeholder="Password" required>
+                      <input id="password-sign-in" type="password" name="password-sign-in" placeholder="Password"
+                        required>
                     </p>
                     <p>
                       <div class="sign-in-error"></div>
@@ -275,19 +266,22 @@
               <div class="modal-body">
                 <form class="cmxform" id="form-sign-up" method="get" action="">
                   <fieldset>
-                      <input class="form-control" id="fname" name="fname" minlength="2" type="text" placeholder="First Name" required>
-                      <br>
-                      <input class="form-control" id="lname" name="lname" minlength="2" type="text" placeholder="Last Name" required>
-                      <br>
-                      <input class="form-control" id="email-sign-up" type="email" name="email" placeholder="Email" required>
-                      <br>
-                      <input class="form-control" id="password-sign-up" type="password" name="password" placeholder="Password" required>
-                      <br>
-                      <input class="form-control" id="confirm-sign-up" type="password" name="confirm" placeholder="Re-Enter Password"
-                        required>
-                      <div class="password-error"></div>
-                      <br>
-                      <input class="submit-sign-up" type="submit" value="Sign me up and Sign me in!">
+                    <input class="form-control" id="fname" name="fname" minlength="2" type="text"
+                      placeholder="First Name" required>
+                    <br>
+                    <input class="form-control" id="lname" name="lname" minlength="2" type="text"
+                      placeholder="Last Name" required>
+                    <br>
+                    <input class="form-control" id="email-sign-up" type="email" name="email-sign-up" placeholder="Email"
+                      required>
+                    <br>
+                    <input class="form-control" id="password-sign-up" type="password" name="password-sign-up"
+                      placeholder="Password" required>
+                    <br>
+                    <input class="form-control" id="confirm-sign-up" type="password" name="confirm-sign-up"
+                      placeholder="Re-Enter Password" required>
+                    <br>
+                    <input class="submit-sign-up" type="submit" value="Sign me up and Sign me in!">
                   </fieldset>
                 </form>
               </div>
@@ -299,73 +293,105 @@
 </html>
 
 <script>
-$(document).ready(function() {
-  //HOW CAN WE DISPLAY THE TITLE, BODY, AND IMAGE AFTER SEARCH????
-  $("#search").on("keyup", function(event) {
-    event.preventDefault();
-    var value = $(this)
-      .val()
-      .toLowerCase();
-    console.log(value);
-    $(".card *").filter(function() {
-      $(this).toggle(
-        $(this)
-          .html()
-          .toLowerCase()
-          .indexOf(value) > -1
-      );
+
+
+  $(document).ready(function () {
+    //HOW CAN WE DISPLAY THE TITLE, BODY, AND IMAGE AFTER SEARCH????
+    $("#search").on("keyup", function (event) {
+      event.preventDefault();
+      var value = $(this)
+        .val()
+        .toLowerCase();
+      console.log(value);
+      $(".card *").filter(function () {
+        $(this).toggle(
+          $(this)
+            .html()
+            .toLowerCase()
+            .indexOf(value) > -1
+        );
+      });
     });
-  });
 
-  // Modal appears when user clicks sign-in
-  $("#sign-in").on("click", function(event) {
-    event.preventDefault();
-    $("#modal-sign-in").modal("show");
-  });
+    // Modal appears when user clicks sign-in
+    $("#sign-in").on("click", function (event) {
+      event.preventDefault();
+      $("#modal-sign-in").modal("show");
+    });
 
-  // Modal appears when user clicks sign-up
-  $("#sign-up").on("click", function(event) {
-    event.preventDefault();
-    $("#modal-sign-up").modal("show");
-
-    //When a user clicks the submit button the application captures the values of the form
-    $(".submit-sign-up").on("click", function() {
-      var password = $("#password-sign-up").val();
-      var confirm = $("#confirm-sign-up").val();
-
-      //checks to see if password and confirmation password matches.
-      if (password !== confirm) {
-        $(".password-error").html("Passwords do not match.");
-        return false;
-      }
-      var firstName = $("#fname")
-        .val()
-        .trim();
-      var lastName = $("#lname")
-        .val()
-        .trim();
-      var email = $("#email-sign-up")
-        .val()
-        .trim();
-
-      // Application records value for new customer
-      var newCustomer = {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        password: password,
-        confirm: confirm
+    $(".submit-sign-in").click(function (event) {
+      event.preventDefault();
+      var emailSignIn = document.getElementById("email-sign-in").value
+      var passwordSignIn = document.getElementById("password-sign-in").value
+      var customerSignIn = {
+        email: emailSignIn,
+        password: passwordSignIn
       };
-      // console.log(newCustomer);
-      console.log(newCustomer.id)
-      // console.log(Customers.dataValues.id);
-      //The application submits new customers
-      
-      $.post("/api/customers", newCustomer).then(function() {
-      
-      window.location.href ="/order?customers_id=" + newCustomer.id;
-      })
+
+      loginCustomer(customerSignIn.email, customerSignIn.password)
+      // emailSignIn.val("");
+      // passwordSignIn.val("");
     });
+
+    function loginCustomer(email, password) {
+      $.post("/api/login", {
+        email: email,
+        password: password
+      }).then(function (data) {
+        window.location.replace(data);
+        // If there's an error, log the error
+      })
+    }
+
+    // Modal appears when user clicks sign-up
+    $("#sign-up").on("click", function (event) {
+      event.preventDefault();
+      $("#modal-sign-up").modal("show");
+
+      //When a user clicks the submit button the application captures the values of the form
+      $(".submit-sign-up").on("click", function () {
+        var password = $("#password-sign-up").val();
+        var confirm = $("#confirm-sign-up").val();
+
+        //checks to see if password and confirmation password matches.
+        if (password !== confirm) {
+          $(".password-error").html("Passwords do not match.");
+          return false;
+        }
+        var firstName = $("#fname")
+          .val()
+          .trim();
+        var lastName = $("#lname")
+          .val()
+          .trim();
+        var email = $("#email-sign-up")
+          .val()
+          .trim();
+
+        // Application records value for new customer
+        var newCustomer = {
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          password: password,
+          confirm: confirm
+        };
+        // console.log(newCustomer);
+        console.log(newCustomer.id)
+        // console.log(Customers.dataValues.id);
+        //The application submits new customers
+        // $.get("/duplicateCheck", function (email) {
+        //   for (i = 0; i < email.length; i++) {
+        //     if (email[i] === newCustomer.email) {
+        //       // $(".password-error").html("There is a duplicate");
+        //       return false;
+        //     }
+        //     else {
+        $.post("/api/customers", newCustomer);
+      })
+//   window.location.href = "/order?customers_id=" + newCustomer.id;    
+      });
+     
   });
-});
+
 </script>

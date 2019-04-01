@@ -2,16 +2,10 @@ var path = require("path");
 
 module.exports = function(app) {
   app.get("/home", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/pages/home.html"));
+    res.sendFile(path.join(__dirname, "../public/views/home.html"));
   });
   app.get("/order", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/views/order.html"));
-  });
-  app.get("/custom", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/views/customization.html"));
-  });
-  app.get("/test", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/views/test.html"));
   });
 
   // Directs user to home page
@@ -19,12 +13,6 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/views/home.html"));
   });
 };
-
-// Render 404 page for any unmatched routes
-//   app.get("*", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../public/pages/home.html"));
-//   });
-// };
 
 // app.get("/custom", function(req, res) {
 //   res.sendFile(path.join(__dirname, "../public/pages/customization.html"));
