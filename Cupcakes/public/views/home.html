@@ -39,6 +39,20 @@
     </div>
   </nav>
 
+   <!-- Jumbotron -->
+   <div class="container">
+    <br>
+    <br>
+    <br>
+      <h1 class="company-name text-center display-4">Whipped </h1>
+      <p class="lead text-center">Ready to Order? Sign in or Sign up below</p>
+      <hr class="my-4">
+      <p class="lead text-center">
+        <a class="btn btn-primary btn-lg" id="sign-in" role="button">Sign in</a>
+        <a class="btn btn-primary btn-lg" id="sign-up" role="button">Sign up</a>
+      </p>
+    </div>
+
   <!--Carousel -->
   <div class="container">
     <div class="password-error"></div>
@@ -91,17 +105,7 @@
     </div>
   </div>
 
-  <!-- Jumbotron -->
-  <div class="container">
-    <div class="jumbotron">
-      <h1 class="company-name text-center display-4">Whipped </h1>
-      <p class="lead text-center">Ready to Order? Sign in or Sign up below</p>
-      <hr class="my-4">
-      <p class="lead text-center">
-        <a class="btn btn-primary btn-lg" id="sign-in" role="button">Sign in</a>
-        <a class="btn btn-primary btn-lg" id="sign-up" role="button">Sign up</a>
-      </p>
-    </div>
+ 
 
 
     <!-- Cupcake Inventory -->
@@ -228,15 +232,11 @@
               <div class="modal-body">
                 <form class="cmxform" id="form-sign-in" method="get" action="">
                   <fieldset>
-                    <label for="email"></label>
-                    <input id="email-sign-in" type="email" name="email-sign-in" placeholder="Email" required>
-                    </p>
-                    <p>
+                    <input class="form-control" input id="email-sign-in" type="email" name="email-sign-in" placeholder="Email" required>
                       <label for="password"></label>
-                      <input id="password-sign-in" type="password" name="password-sign-in" placeholder="Password"
+                      <input class="form-control" input id="password-sign-in" type="password" name="password-sign-in" placeholder="Password"
                         required>
-                    </p>
-                    <p>
+                      <br>
                       <div class="sign-in-error"></div>
                       <input class="submit-sign-in" type="submit" value="Sign me in!">
                     </p>
@@ -376,17 +376,9 @@
           password: password,
           confirm: confirm
         };
-        // console.log(newCustomer);
+        
         console.log(newCustomer.id)
-        // console.log(Customers.dataValues.id);
-        //The application submits new customers
-        // $.get("/duplicateCheck", function (email) {
-        //   for (i = 0; i < email.length; i++) {
-        //     if (email[i] === newCustomer.email) {
-        //       // $(".password-error").html("There is a duplicate");
-        //       return false;
-        //     }
-        //     else {
+        
         $.post("/api/customers", newCustomer);
       })
 //   window.location.href = "/order?customers_id=" + newCustomer.id;    

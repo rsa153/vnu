@@ -208,7 +208,7 @@
 
         </div>
         <div class="form-group col-md-9">
-          <input type="text" class="form-control" id="cardNumber" name="cardNumber">
+          <input type="integer" class="form-control" id="cardNumber" name="cardNumber">
         </div>
         <div class="form-group col-md-3"><label for="cvc"><strong>CVC:</strong></label></div>
         <div class="form-group col-md-9">
@@ -257,7 +257,9 @@
         cvc: $("#cvc").val(),
       }
       console.log(orderData);
-      $.post('/api/orders', orderData)
+      $.post('/api/orders', orderData).then(function() {
+        location.replace("/home");
+      })
       // .then()
       // .catch
     });
