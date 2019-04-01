@@ -58,11 +58,11 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/order", function ensureAuthenticated(req, res) {
-    if (!req.isAuthenticated()) {
-      res.redirect("/");
-    }
-  });
+  // app.get("/order", function ensureAuthenticated(req, res) {
+  //   if (!req.isAuthenticated()) {
+  //     res.redirect("/");
+  //   }
+  // });
 };
 
 //     db.orders
