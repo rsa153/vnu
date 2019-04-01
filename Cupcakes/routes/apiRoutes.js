@@ -27,16 +27,16 @@ module.exports = function(app) {
 
   app.post("/api/orders", function(req, res) {
     console.log(req.body);
-    db.Orders.create(req.body)
-      .then(function(dbOrders) {
-        console.log(dbOrders);
-        res.json(dbOrders);
-      })
-      .then(function(dbOrders) {
-        console.log(dbOrders);
-        res.json(dbOrders);
-      });
+    db.Orders
+      .create(req.body)
+      .then (function(dbOrders){        
+        res.json(dbOrders); 
+        (function(){
+          res.redirect("/")
+        })                      
+      })  
   });
+
 };
 
 //     db.orders
@@ -55,3 +55,14 @@ module.exports = function(app) {
 //         cvc: req.body.cvc,
 //         CustomerID: req.body.CustomerID
 //       })
+
+
+
+// .create(req.body).then (function(dbOrders){
+//         console.log(dbOrders);
+//         res.json(dbOrders);
+//       })
+//       .then(function(dbOrders) {
+//         console.log(dbOrders);
+//         res.json(dbOrders);
+//       });
