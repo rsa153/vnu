@@ -6,14 +6,13 @@ module.exports = function(sequelize, DataTypes) {
     },
     cardNumber: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      unique: true,
-      len: [16],
-      validate: {
-        isCreditCard: {
-          msg: "You must enter a valid credit card number"
-        }
-      }
+      allowNull: false
+      // unique: true,
+      // len: [16],
+      // validate: {
+      //   isCreditCard: {
+      //     msg: "You must enter a valid credit card number"
+      //   }
     },
     expiration: {
       type: DataTypes.INTEGER,
