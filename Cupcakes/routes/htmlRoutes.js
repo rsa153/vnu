@@ -4,17 +4,7 @@ module.exports = function(app) {
   app.get("/home", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/pages/home.html"));
   });
-  
-  //Carousel became about page
-  // app.get("/about", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/pages/about.html"));
-  // });
-  // app.get("/inventory", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/pages/inventory.html"));
-  // });
-
   app.get("/order", function(req, res) {
-
     res.sendFile(path.join(__dirname, "../public/views/order.html"));
   });
   app.get("/custom", function(req, res) {
@@ -24,7 +14,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/views/test.html"));
   });
 
-  // Render 404 page for any unmatched routes
+  // Directs user to home page
   app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/views/home.html"));
   });
@@ -38,4 +28,12 @@ module.exports = function(app) {
 
 // app.get("/custom", function(req, res) {
 //   res.sendFile(path.join(__dirname, "../public/pages/customization.html"));
+// });
+
+//Carousel became about page
+// app.get("/about", function(req, res) {
+//   res.sendFile(path.join(__dirname, "../public/pages/about.html"));
+// });
+// app.get("/inventory", function(req, res) {
+//   res.sendFile(path.join(__dirname, "../public/pages/inventory.html"));
 // });
