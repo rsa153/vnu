@@ -22,6 +22,34 @@
 
 <body background="https://b-ssl.duitang.com/uploads/item/201408/19/20140819145404_fUMUT.thumb.1400_0.jpeg">
     
+<<<<<<< HEAD
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light light-blue bg-light fixed-top">
+        <a class="navbar-brand" href="home.html"><i class="fas fa-home fa-lg"> Whipped</i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="home.html">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="order.html">Order <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="sign-in">Sign-in <span class="sr-only"></span></a>
+            </li>
+            <li>
+              <a class="nav-link" id="sign-up">Sign-up <span class="sr-only"></span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+<!-- Nav Bar -->
+=======
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light light-blue bg-light fixed-top">
     <a class="navbar-brand" href="home.html"><i class="fas fa-home fa-lg"> Whipped</i></a>
@@ -39,6 +67,7 @@
       </ul>
     </div>
   </nav>
+>>>>>>> 9f3d7e6d602fdc9dcc7530a2a7b5f6c3fec6ed64
 
 
 <!-- Main Layout -->
@@ -59,8 +88,8 @@
           <div class="carousel-caption d-block">
             <h3>Whipped</h3>
             <p>Family own since 2019</p>
-            <button type="button" class="btn btn-light" id="sign-in">Sign-in</button>
-            <button type="button" class="btn btn-light" id="sign-up">Sign-up</button>
+            <a class="btn btn-dark" id="sign-in" role="button">Sign-in <span class="sr-only"></span></a>
+            <a class="btn btn-dark" id="sign-up" role="button">Sign-up <span class="sr-only"></span></a>
           </div>
         </div>
         <div class="carousel-item">
@@ -74,8 +103,9 @@
         <div class="carousel-item">
           <img  class='img-fluid w-100' src="http://staceystewartphotography.com/wp-content/uploads/2016/01/Ottawa-wedding-photographer-Stacey-Stewart_0302.jpg" alt="Third Slide">
           <div class="carousel-caption d-block">
+              <h3>Hand Made, Like grandma used to make</h3>
             <p>We take pride on knowing we select our products from local farms</p>
-            <h3>Hand Made, Like grandma used to make</h3>
+
           </div>
         </div>
       </div>
@@ -210,13 +240,13 @@
         </div>
 
         <!-- Modal for sign-in  -->
-        <div class="modal fade" id="modal-sign-in" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
+        <div class="modal fade" id="modal-sign-in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-              <div class="modal-header">
+              <div class="modal-header text-center">
 
                 <!-- Title for Modal -->
-                <h5 class="modal-title text-center" id="modalTitle">Please input your information below to sign up</h5>
+                <h5 class="modal-title w-100 font-weight-bold" id="modalTitle">Sign in</h5>
 
                 <!-- Close ("X") button for modal -->
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -226,9 +256,27 @@
 
               <!-- Sign in form -->
               <div class="modal-body">
+                 
                 <form class="cmxform" id="form-sign-in" method="get" action="">
-                  <fieldset>
+                    <div class="modal-body mx-3">
+                      <div class="md-form mb-4">
+                        <i class="fas fa-envelope prefix grey-text"></i>
                     <label for="email"></label>
+<<<<<<< HEAD
+                    <input id="email" type="email" name="email" placeholder="Email" required>
+                  </div>
+                      <div class="md-form mb-3">
+                    <i class="fas fa-lock prefix grey-text"></i>
+                      <label for="password"></label>
+                      <input id="password-sign-in" type="password" name="password" placeholder="Password" required>
+                    </div>
+                    </div>
+                    
+                        <div class="modal-footer">
+                            <div class="sign-in-error"></div>
+                            <input class=" btn btn-primary submit-sign-in" type="submit" value="Sign me in!">
+                          </div>
+=======
                     <input id="email-sign-in" type="email" name="email-sign-in" placeholder="Email" required>
                     </p>
                     <p>
@@ -241,6 +289,7 @@
                       <input class="submit-sign-in" type="submit" value="Sign me in!">
                     </p>
                   </fieldset>
+>>>>>>> 9f3d7e6d602fdc9dcc7530a2a7b5f6c3fec6ed64
                 </form>
               </div>
             </div>
@@ -248,13 +297,13 @@
         </div>
 
         <!-- Modal for sign-up  -->
-        <div class="modal fade" id="modal-sign-up" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal fade" id="modal-sign-up" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
             <div class="modal-content">
-              <div class="modal-header">
+              <div class="modal-header  text-center">
 
                 <!-- Title for Modal -->
-                <h5 class="modal-title text-center" id="modalTitle">Please input your information below to sign up</h5>
+                <h5 class="modal-title w-100 font-weight-bold" id="modalTitle">Sign up</h5>
 
                 <!-- Close ("X") button for modal -->
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -263,8 +312,39 @@
               </div>
 
               <!-- Sign up form -->
-              <div class="modal-body">
+              <div class="modal-body mx-3">
                 <form class="cmxform" id="form-sign-up" method="get" action="">
+<<<<<<< HEAD
+                  <div class="md-form mb-5">
+                    <i class="fas fa-user prefix grey-text"></i>
+                      <label for="fname"></label>
+                      <input id="fname" name="fname" minlength="2" type="text" placeholder="First Name" required>
+
+                      <label for="lname"></label>
+                      <input id="lname" name="lname" minlength="2" type="text" placeholder="Last Name" required>
+                </div>
+                <div class="md-form mb-5">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                      <label for="email"></label>
+                      <input id="email-sign-up" type="email" name="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="md-form mb-4">
+                    <i class="fas fa-lock prefix grey-text"></i>
+
+                      <label for="password"></label>
+                      <input id="password-sign-up" type="password" name="password" placeholder="Password" required>
+
+                      <label for="password"></label>
+                      <input id="confirm-sign-up" type="password" name="confirm" placeholder="Re-Enter Password"
+                        required>
+                      </div>
+                      <br>
+                      <div class="modal-footer">
+                      <div class="password-error"></div>
+                      <input class=" btn btn-primary submit-sign-up" type="submit" value="Sign me up and Sign me in!">
+                      </div>
+=======
                   <fieldset>
                     <input class="form-control" id="fname" name="fname" minlength="2" type="text"
                       placeholder="First Name" required>
@@ -282,20 +362,30 @@
                       placeholder="Re-Enter Password" required>
                     <br>
                     <input class="submit-sign-up" type="submit" value="Sign me up and Sign me in!">
+>>>>>>> 9f3d7e6d602fdc9dcc7530a2a7b5f6c3fec6ed64
                   </fieldset>
                 </form>
               </div>
             </div>
           </div>
         </div>
+
+
   </main>
+  <br>
+  <br>
   <!-- Main Layout -->
+        <!-- Footer -->
+        <footer class="page-footer font-small blue">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+              <a href="https://github.com/rsa153/vnu"> VNU GitHub</a>
+            </div>
+            <!-- Copyright -->
+          
+          </footer>
+          <!-- Footer -->
 
-  <!-- Footer -->
-  <footer>
-
-  </footer>
-  <!-- Footer -->
 </body>
 
 </html>
