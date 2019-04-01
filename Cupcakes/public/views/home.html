@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Auntie Cupcakes</title>
+  <title>Whipped</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -23,8 +23,8 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light light-blue bg-light">
-    <a class="navbar-brand" href="home.html"><i class="fas fa-home fa-lg"> Auntie's</i></a>
+  <nav class="navbar navbar-expand-lg navbar-light light-blue bg-light fixed-top">
+    <a class="navbar-brand" href="home.html"><i class="fas fa-home fa-lg"> Whipped</i></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -33,20 +33,24 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="../views/home.html">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="../public/pages/home.html">Home <span class="sr-only"></span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="../views/order.html">Order <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="../public/pages/order.html">Order <span class="sr-only"></span></a>
         </li>
         <li class="nav-item active">
+
+          <a class="nav-link" href="../public/pages/home.html">Sign-up <span class="sr-only"></span></a>
+
           <a class="nav-link" href="../test">Sign-up <span class="sr-only">(current)</span></a>
+
         </li>
       </ul>
     </div>
   </nav>
 
   <!--Carousel -->
-  <!-- <div class="container">
+  <div class="container">
     <div id="cupcakeIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="cupcakes" data-slide-to="0" class="active"></li>
@@ -55,25 +59,25 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img  class='img-fluid w-100' src="../images/multiCupcakes_opt.jpg" alt="...">
-          <div class="carousel-caption d-block w-100">
-            <h5>We da Best</h5>
+          <img  class='img-fluid w-100' src="https://fdb70fb0c48d25cdd3b7-a2b3755b2f276d4912261bdd78803625.ssl.cf1.rackcdn.com/Sweet-Shot1394.jpg" alt="...">
+          <div class="carousel-caption d-block">
+            <h3>We da Best</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac faucibus felis, non consequat ligula.
               Praesent tincidunt metus dui, et feugiat purus faucibus sit amet. </p>
           </div>
         </div>
         <div class="carousel-item">
-          <img  class='img-fluid w-100' src="../images/funAndChoco.jpeg" alt="...">
-          <div class="carousel-caption d-block w-100">
-            <h5>Maybe</h5>
+          <img  class='img-fluid w-100' src="https://static1.squarespace.com/static/5a53d197cf81e0089f65e2bc/5af078602b6a28ab60d88ccb/5af0789070a6adfccac33b5d/1525709015321/i-dream-jeanne-cakes-cupcakes-relive-photography-fb-01.jpg" alt="...">
+          <div class="carousel-caption d-block">
+            <h3>Maybe</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac faucibus felis, non consequat ligula.
               Praesent tincidunt metus dui, et feugiat purus faucibus sit amet. </p>
           </div>
         </div>
         <div class="carousel-item">
-          <img  class='img-fluid w-100' src="../images/strawSlide_opt.jpg" alt="...">
-          <div class="carousel-caption d-block w-100">
-            <h5>YES, We</h5>
+          <img  class='img-fluid w-100' src="http://staceystewartphotography.com/wp-content/uploads/2016/01/Ottawa-wedding-photographer-Stacey-Stewart_0302.jpg" alt="...">
+          <div class="carousel-caption d-block">
+            <h3>YES, We</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac faucibus felis, non consequat ligula.
               Praesent tincidunt metus dui, et feugiat purus faucibus sit amet. </p>
           </div>
@@ -88,12 +92,12 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-  </div> -->
+  </div>
 
   <!-- Jumbotron -->
   <div class="container">
     <div class="jumbotron">
-      <h1 class="company-name text-center display-4">Auntie's Cupcakes</h1>
+      <h1 class="company-name text-center display-4">Whipped </h1>
       <p class="lead text-center">Ready to Order? Sign in or Sign up below</p>
       <hr class="my-4">
       <p class="lead text-center">
@@ -113,40 +117,40 @@
           <div class="row">
             <div class="col">
               <div class="card " id="myDIV" style="width: 18rem;">
-                <img class="card-img-top" src="../images/doubleChocolate_opt.jpg" alt="Double Chocolate"
+                <img class="card-img-top" src="https://sallysbakingaddiction.com/wp-content/uploads/2017/06/moist-chocolate-cupcakes-5.jpg" alt="Double Chocolate"
                   name="Double Chocolate">
                 <div class="card-body">
-                  <a href="../views/order.html">
+                  <a href="order.html">
                     <h5 class="card-title">Double Chocolate</h5>
                   </a>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                     card's
                     content.</p>
-                  <a href="../views/order.html" class="btn btn-primary">Order</a>
+                  <a href="order.html" class="btn btn-primary">Order</a>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card" id="myDIV" style="width: 18rem;">
-                <img class="card-img-top" src="../images/oreoCupcake_opt.jpg" alt="Oreo Cupcake">
+                <img class="card-img-top" src="https://www.bakedbyrachel.com/wp-content/uploads/2016/07/choccookiescreamcupcakes1_bakedbyrachel.jpg" alt="Oreo Cupcake">
                 <div class="card-body">
                   <h5 class="card-title">Oreo Cupcake</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                     card's
                     content.</p>
-                  <a href="../views/order.html" class="btn btn-primary">Order</a>
+                  <a href="../pages/order.html" class="btn btn-primary">Order</a>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card" id="myDIV" style="width: 18rem;">
-                <img class="card-img-top" src="../images/redVelvet.jpg" alt="Red Velvet Cupcake">
+                <img class="card-img-top" src="https://therecipecritic.com/wp-content/uploads/2017/01/RedVelvetCupcakes2.jpg" alt="Red Velvet Cupcake">
                 <div class="card-body" id="myDIV">
                   <h5 class="card-title">Red Velvet</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                     card's
                     content.</p>
-                  <a href="../views/order.html" class="btn btn-primary">Order</a>
+                  <a href="../pages/order.html" class="btn btn-primary">Order</a>
                 </div>
               </div>
             </div>
@@ -156,31 +160,31 @@
           <div class="row">
             <div class="col">
               <div class="card" id="myDIV" style="width: 18rem;">
-                <img class="card-img-top" src="../images/caramelAppleCupcake_opt.jpg" alt="Caramel Apple Cupcake">
+                <img class="card-img-top" src="https://www.lifeloveandsugar.com/wp-content/uploads/2015/08/Caramel_Apple_Cupcakes2.jpg" alt="Caramel Apple Cupcake">
                 <div class="card-body" id="myDIV">
                   <h5 class="card-title">Caramel Apple Cupcake</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                     card's
                     content.</p>
-                  <a href="../views/order.html" class="btn btn-primary">Order</a>
+                  <a href="../pages/order.html" class="btn btn-primary">Order</a>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card" id="myDIV" style="width: 18rem;">
-                <img class="card-img-top" src="../images/strawberryCupcake_opt.jpg" alt="Strawberry Cupcake">
+                <img class="card-img-top" src="https://bakerbynature.com/wp-content/uploads/2016/06/untitled-30-of-63-3.jpg" alt="Strawberry Cupcake">
                 <div class="card-body" id="myDIV">
                   <h5 class="card-title">Strawberry Cupcake</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                     card's
                     content.</p>
-                  <a href="../views/order.html" class="btn btn-primary">Order</a>
+                  <a href="../pages/order.html" class="btn btn-primary">Order</a>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card" id="myDIV" style="width: 18rem;">
-                <img class="card-img-top" src="../images/smoreCupcake_opt.jpg" alt="S'more Cupcake">
+                <img class="card-img-top" src="https://houseofnasheats.com/wp-content/uploads/2017/08/Smores-Cupcakes-2.jpg" alt="S'more Cupcake">
                 <div class="card-body" id="myDIV">
                   <h5 class="card-title" id="cupcake">S'more Cupcake</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -188,7 +192,7 @@
                     content.</p>
 
 
-                  <a href="../views/order.html" class="btn btn-primary">Order</a>
+                  <a href="../pages/order.html" class="btn btn-primary">Order</a>
                 </div>
               </div>
             </div>

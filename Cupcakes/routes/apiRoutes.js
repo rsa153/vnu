@@ -28,14 +28,41 @@ module.exports = function(app) {
   app.post("/api/orders", function(req, res) {
     console.log(req.body);
     db.Orders
+
       .create(req.body)
       .then (function(dbOrders){        
         res.json(dbOrders); 
         (function(){
           res.redirect("/")
         })                      
-      })    
-        
+      })   
   });
 
 };
+
+//     db.orders
+//       .create({
+//         date: req.body.date,
+//         billingAddress: req.body.billingAddress,
+//         city: req.body.city,
+//         state: req.body.state,
+//         email: req.body.email,
+//         cupcakeType: req.body.cupcakeType,
+//         quantity: req.body.quantity,
+//         specialInstructions: req.body.specialInstructions,
+//         totalPrice: req.body.totalPrice,
+//         card: req.body.card,
+//         cardNumber: req.body.cardNumber,
+//         cvc: req.body.cvc,
+//         CustomerID: req.body.CustomerID
+//       })
+
+
+// .create(req.body).then (function(dbOrders){
+//         console.log(dbOrders);
+//         res.json(dbOrders);
+//       })
+//       .then(function(dbOrders) {
+//         console.log(dbOrders);
+//         res.json(dbOrders);
+//       });
