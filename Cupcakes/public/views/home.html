@@ -38,20 +38,18 @@
     </div>
   </nav>
 
-  <!-- Jumbotron -->
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <br>
-        <br>
-        <br>
-        <h1 class="company-name text-center display-4">Whipped </h1>
-        <p class="lead text-center">Ready to Order? Sign in or Sign up below</p>
-        <p class="lead text-center">
-          <a class="btn btn-primary btn-lg" id="sign-in" role="button">Sign in</a>
-          <a class="btn btn-primary btn-lg" id="sign-up" role="button">Sign up</a>
-        </p>
-      </div>
+   <!-- Jumbotron -->
+   <div class="container">
+    <br>
+    <br>
+    <br>
+      <h1 class="company-name text-center display-4">Whipped </h1>
+      <p class="lead text-center">Ready to Order? Sign in or Sign up below</p>
+      <hr class="my-4">
+      <p class="lead text-center">
+        <a class="btn btn-primary btn-lg" id="sign-in" role="button">Sign in</a>
+        <a class="btn btn-primary btn-lg" id="sign-up" role="button">Sign up</a>
+      </p>
     </div>
 
     <!--Carousel -->
@@ -101,7 +99,19 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
+  </div>
+
+ 
+
 
     <!-- Cupcake Inventory -->
     <div class="container">
@@ -213,15 +223,14 @@
               <div class="modal-body">
                 <form class="cmxform" id="form-sign-in" method="get" action="">
                   <fieldset>
-                    <input class="form-control" input id="email-sign-in" type="email" name="email-sign-in"
-                      placeholder="Email" required>
+                    <input class="form-control" input id="email-sign-in" type="email" name="email-sign-in" placeholder="Email" required>
                       <label for="password"></label>
-                      <input class="form-control" input id="password-sign-in" type="password" name="password-sign-in"
-                        placeholder="Password" required>
-                      <div class="sign-in-error"></div>
+                      <input class="form-control" input id="password-sign-in" type="password" name="password-sign-in" placeholder="Password"
+                        required>
                       <br>
-                      <input class="form-control" input class="submit-sign-in" type="submit" value="Sign me in!">
-                    
+                      <div class="sign-in-error"></div>
+                      <input class="submit-sign-in" type="submit" value="Sign me in!">
+                    </p>
                   </fieldset>
                 </form>
               </div>
@@ -263,8 +272,7 @@
                     <input class="form-control" id="confirm-sign-up" type="password" name="confirm-sign-up"
                       placeholder="Re-Enter Password" required>
                     <br>
-                    <input class="form-control" input class="submit-sign-up" type="submit"
-                      value="Sign me up and Sign me in!">
+                    <input class="submit-sign-up" type="submit" value="Sign me up and Sign me in!">
                   </fieldset>
                 </form>
               </div>
@@ -359,22 +367,14 @@
           password: password,
           confirm: confirm
         };
-        // console.log(newCustomer);
+        
         console.log(newCustomer.id)
-        // console.log(Customers.dataValues.id);
-        //The application submits new customers
-        // $.get("/duplicateCheck", function (email) {
-        //   for (i = 0; i < email.length; i++) {
-        //     if (email[i] === newCustomer.email) {
-        //       // $(".password-error").html("There is a duplicate");
-        //       return false;
-        //     }
-        //     else {
+        
         $.post("/api/customers", newCustomer);
       })
-      //   window.location.href = "/order?customers_id=" + newCustomer.id;    
-    });
-
+//   window.location.href = "/order?customers_id=" + newCustomer.id;    
+      });
+     
   });
 
 </script>

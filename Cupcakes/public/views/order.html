@@ -33,6 +33,9 @@
         <li class="nav-item active">
           <a class="nav-link" href="/home">Home</a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link active" href="/order">Order</a>
+        </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search" aria-label="Search">
@@ -173,7 +176,7 @@
         </div>
         <div class="form-group col-md-9">
           <textarea name="specialInstructions" cols="100" rows="5"
-            id="specialInstructions">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."</textarea>
+            id="specialInstructions">Insert Special Instructions here</textarea>
         </div>
         <div class="form-group col-md-3">
           <label for="totalPrice"><strong>Your Order Total is $: </strong> </label>
@@ -205,7 +208,7 @@
 
         </div>
         <div class="form-group col-md-9">
-          <input type="text" class="form-control" id="cardNumber" name="cardNumber">
+          <input type="integer" class="form-control" id="cardNumber" name="cardNumber">
         </div>
         <div class="form-group col-md-3"><label for="cvc"><strong>CVC:</strong></label></div>
         <div class="form-group col-md-9">
@@ -254,7 +257,9 @@
         cvc: $("#cvc").val(),
       }
       console.log(orderData);
-      $.post('/api/orders', orderData)
+      $.post('/api/orders', orderData).then(function() {
+        location.replace("/home");
+      })
       // .then()
       // .catch
     });
