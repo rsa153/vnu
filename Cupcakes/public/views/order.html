@@ -1,48 +1,50 @@
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Whipped</title>
-
-  <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" media="screen" href="../styles/styles.css" />
-  <!-- <script src="index.js"></script> -->
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Whipped</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="../styles/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="../js/homeIndex.js"></script>
+    <script src="../js/customers.js"></script>
 </head>
-<body>
+<body background="https://b-ssl.duitang.com/uploads/item/201408/19/20140819145404_fUMUT.thumb.1400_0.jpeg">
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light light-blue bg-light">
-        <a class="navbar-brand" href="home.html"><i class="fas fa-home fa-lg"> Whipped</i></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                  <a class="nav-link" href="/home">Home</a>
-            </li>
-            <li class="nav-item active">
-                   <a class="nav-link" href="/inventory">Fresh Baked</a>
-            </li>
-            <li class="nav-item active">
-                  <a class="nav-link" href="/about">About Us</a>
-            </li>
-            <li class="nav-item active">
-                  <a class="nav-link active" href="/order">Order</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light light-blue bg-light fixed-top">
+            <a class="navbar-brand" href="home.html"><i class="fas fa-home fa-lg"> Whipped</i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                  <a class="nav-link" href="home.html">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="order.html">Order <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="sign-in">Sign-in <span class="sr-only"></span></a>
+                </li>
+                <li>
+                  <a class="nav-link" id="sign-up">Sign-up <span class="sr-only"></span></a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+            <!-- Nav Bar -->
 
         <div class="container">
                 <div class="header jumbotron">
@@ -55,35 +57,35 @@
         </div>
                 
         <form action="/api/orders" method="POST" id="orderForm">
-            <div class="row">
+        <div class="row">
             <div class="form-group col-md-3">
                 <label for ="order"><strong>Order Date: </strong></label>
-                </div>
-                <div class="form-group col-md-9">
+            </div>
+            <div class="form-group col-md-9">
                     <input type="date" class="form-control" id="date" name="date">
-                </div>
+            </div>
             <div class="form-group col-md-3"> 
                 <label for ="customerID"><strong>Customer ID: </strong></label>
-              </div>
+            </div>
             <div class="form-group col-md-9">
                 <input type="number" class="form-control" id="customerID" name="customerID">
-              </div>
-              <div class="form-group col-md-3">
+            </div>
+            <div class="form-group col-md-3">
                   <label for ="billingAddress"><strong>Billing Address: </strong></label>
-                  </div>
-              <div class="form-group col-md-9">
+            </div>
+            <div class="form-group col-md-9">
                   <input type="text" class="form-control" id="billingAddress" name="billingAddress" required>
-              </div>
-              <div class="form-group col-md-3">
+            </div>
+            <div class="form-group col-md-3">
                   <label for ="city"><strong>City: </strong></label>
-                  </div>
-              <div class="form-group col-md-9">
+            </div>
+            <div class="form-group col-md-9">
                   <input type="text" class="form-control" id="city" name="city" required>
-              </div>
-              <div class="form-group col-md-3">
+            </div>
+            <div class="form-group col-md-3">
                   <label for ="state"><strong>State: </strong></label>
-                  </div>
-              <div class="form-group col-md-9">
+            </div>
+            <div class="form-group col-md-9">
                   <select id="state" name="state">
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
@@ -137,25 +139,25 @@
                       <option value="WI">Wisconsin</option>
                       <option value="WY">Wyoming</option>
                     </select>
-              </div>
+            </div>
             <div class="form-group col-md-3">
                 <label for ="email"><strong>Email Address </strong></label>
-                </div>
+            </div>
             <div class="form-group col-md-9">
                 <input type="email" class="form-control" id="email" name="email">
             </div>
             <div class="form-group col-md-3">
                 <label for ="pickupDate"><strong>Pick Up Date: </strong></label>
                 <small class="form-text text-muted">Please allow at least 2 business days from order date. </small>
-                </div>                  
-                  <div class="form-group col-md-9">
-                      <input type="date" class="form-control" id="pickupDate" name="pickupDate">
-                  </div>
+            </div>                  
+            <div class="form-group col-md-9">
+                <input type="date" class="form-control" id="pickupDate" name="pickupDate">
+            </div>
                     
                 <div class="form-group col-md-3">
                     <label for = "cupcakeType"><strong>Cupcake Type:</strong> </label>
-                    </div>
-                    <div class="form-group col-md-9">
+                </div>
+                <div class="form-group col-md-9">
                         <select name ="cupcakeType" id="cupcakeType">
                             <option value="">Make Selection</option>
                             <option value="oreo">Oreo Cupcake</option>
@@ -167,7 +169,7 @@
                             <option value="strawberry">Strawberry</option>
                             <option value="Apple">Caramel Apple</option>
                          </select>  
-                    </div>
+                </div>
                 <div class="form-group col-md-3">
                     <label for="quantity"><strong>Quantity Needed:</strong></label>
                     </div>
@@ -218,59 +220,149 @@
                 <div class="form-group col-md-9"><button type="submit" class="btn btn-primary id" id="submit">Submit</button></div>                                         
                </div>        
         </div>                  
-              </form>
-              <script>
-                  //Get Values from form
-          $("#submit").on("click", function(event){
-                      // event.preventDefault();
-                      //   // event.preventDefault();           
-      var orderData = {
-         date: $("#date").val(),
-        //  customerID: $("#customerID").val(),
-         billingAddress: $("#billingAddress").val(),
-         city: $("#city").val(),
-         state: $("#state option:selected").text(),
-         email: $("#email").val(),
-         pickupDate: $("#pickupDate").val(),
-         cupcakeType:$("#cupcakeType option:selected").text(),
-         quantity: $("#quantity").val(),
-         specialInstructions: $("#instructions").val(),
-         totalPrice: $("#totalPrice").val(), 
-         card: $("#card").val(),
-         cardNumber: $("#cardNumber").val(),
-         cvc: $("#cvc").val(),
-               }
-      console.log(orderData);
-      // $.post('/api/orders', orderData)
-        // .then()
-        // .catch
-    });
-    let today = new Date().toISOString().substr(0,10);
-    document.querySelector("#date").value = today;
+        </form>
 
-    /// Dynamic Totals
+        <!-- Modal for sign-in  -->
+        <div class="modal fade" id="modal-sign-in" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
 
-          var first = document.getElementById('quantity');     
-          
-          first.addEventListener("input", sum);
-           
-          function sum() {            
-          var one = parseFloat(first.value) || 0.00;
-          var add = one * 3.79;
-          add = add.toFixed(2);         
-          document.getElementById("totalPrice").value = add;
-          result
-          };  
+                <!-- Title for Modal -->
+                <h5 class="modal-title text-center" id="modalTitle">Please input your information below to sign up</h5>
 
-      /// return thank you page        
+                <!-- Close ("X") button for modal -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <!-- Sign in form -->
+              <div class="modal-body">
+                <form class="cmxform" id="form-sign-in" method="get" action="">
+                  <fieldset>
+                    <label for="email"></label>
+                    <input id="email" type="email" name="email" placeholder="Email" required>
+                    </p>
+                    <p>
+                      <label for="password"></label>
+                      <input id="password-sign-in" type="password" name="password" placeholder="Password" required>
+                    </p>
+                    <p>
+                      <div class="sign-in-error"></div>
+                      <input class="submit-sign-in" type="submit" value="Sign me in!">
+                    </p>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal for sign-up  -->
+        <div class="modal fade" id="modal-sign-up" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+
+                <!-- Title for Modal -->
+                <h5 class="modal-title text-center" id="modalTitle">Please input your information below to sign up</h5>
+
+                <!-- Close ("X") button for modal -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <!-- Sign up form -->
+              <div class="modal-body">
+                <form class="cmxform" id="form-sign-up" method="get" action="">
+                  <fieldset>
+                    <p>
+                      <label for="fname"></label>
+                      <input id="fname" name="fname" minlength="2" type="text" placeholder="First Name" required>
+                    </p>
+                    <p>
+                      <label for="lname"></label>
+                      <input id="lname" name="lname" minlength="2" type="text" placeholder="Last Name" required>
+                    </p>
+                    <p>
+                      <label for="email"></label>
+                      <input id="email-sign-up" type="email" name="email" placeholder="Email" required>
+                    </p>
+                    <p>
+                      <label for="password"></label>
+                      <input id="password-sign-up" type="password" name="password" placeholder="Password" required>
+                    </p>
+                    <p>
+                      <label for="password"></label>
+                      <input id="confirm-sign-up" type="password" name="confirm" placeholder="Re-Enter Password"
+                        required>
+                    </p>
+                    <p>
+                      <div class="password-error"></div>
+                      <input class="submit-sign-up" type="submit" value="Sign me up and Sign me in!">
+                    </p>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
+<script>
+        //Get Values from form
+$("#submit").on("click", function(event){
+            // event.preventDefault();
+            //   // event.preventDefault();           
+var orderData = {
+date: $("#date").val(),
+//  customerID: $("#customerID").val(),
+billingAddress: $("#billingAddress").val(),
+city: $("#city").val(),
+state: $("#state option:selected").text(),
+email: $("#email").val(),
+pickupDate: $("#pickupDate").val(),
+cupcakeType:$("#cupcakeType option:selected").text(),
+quantity: $("#quantity").val(),
+specialInstructions: $("#instructions").val(),
+totalPrice: $("#totalPrice").val(), 
+card: $("#card").val(),
+cardNumber: $("#cardNumber").val(),
+cvc: $("#cvc").val(),
+     }
+console.log(orderData);
+// $.post('/api/orders', orderData)
+// .then()
+// .catch
+});
+let today = new Date().toISOString().substr(0,10);
+document.querySelector("#date").value = today;
+
+/// Dynamic Totals
+
+var first = document.getElementById('quantity');     
+
+first.addEventListener("input", sum);
+ 
+function sum() {            
+var one = parseFloat(first.value) || 0.00;
+var add = one * 3.79;
+add = add.toFixed(2);         
+document.getElementById("totalPrice").value = add;
+result
+};  
+
+/// return thank you page        
 //           window.onload=function() {
 //           document.getElementById("orderForm").onsubmit=function() {
 //           window.location.replace("thanks.html");
 //           return false;
 //           }
 // }
-      </script>                      
-</body>
-<footer>
-</footer>
-</html>
+</script> 

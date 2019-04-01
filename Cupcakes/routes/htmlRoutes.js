@@ -4,7 +4,6 @@ module.exports = function(app) {
   app.get("/home", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/pages/home.html"));
   });
-  
   //Carousel became about page
   // app.get("/about", function(req, res) {
   //   res.sendFile(path.join(__dirname, "../public/pages/about.html"));
@@ -14,7 +13,6 @@ module.exports = function(app) {
   // });
 
   app.get("/order", function(req, res) {
-
     res.sendFile(path.join(__dirname, "../public/views/order.html"));
   });
   app.get("/custom", function(req, res) {
