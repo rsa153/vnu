@@ -33,8 +33,7 @@ module.exports = function(sequelize, DataTypes) {
   Customers.prototype.validPassword = function(password, confirm) {
     return bcrypt.compareSync(password, this.password, confirm, this.confirm);
   };
-  // Hooks are automatic methods that run during various phases of the User Model lifecycle
-  // In this case, before a User is created, we will automatically hash their password
+  
   Customers.hook("beforeCreate", function(customers) {
     customers.password = bcrypt.hashSync(
       customers.password,
@@ -50,8 +49,6 @@ module.exports = function(sequelize, DataTypes) {
   // Customer.associate = function(models) {
   // }
   Customers.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
     Customers.hasMany(models.Orders);
   };
   return Customers;
