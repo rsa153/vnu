@@ -42,15 +42,14 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  // Payment.associate = function(models) {
-  //   // We're saying that a Post should belong to an Author
-  //   // A Post can't be created without an Author due to the foreign key constraint
-  //   Payment.belongsTo(models.Customers, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  // };
+  Payment.associate = function(models) {
+   
+    Payment.belongsTo(models.Customers, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
   return Payment;
 };
