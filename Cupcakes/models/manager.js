@@ -1,3 +1,4 @@
+//Created Manager table for future iterations of the application.
 module.exports = function(sequelize, DataTypes) {
   var Manager = sequelize.define("Manager", {
     firstName: {

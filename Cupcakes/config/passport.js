@@ -1,5 +1,4 @@
-//// https://stackoverflow.com/questions/26403853/node-js-authentication-with-passport-how-to-flash-a-message-if-a-field-is-missi
-/// missing messages to user if something is wrong.
+//// missing messages to user if something is wrong: https://stackoverflow.com/questions/26403853/node-js-authentication-with-passport-how-to-flash-a-message-if-a-field-is-missi
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 

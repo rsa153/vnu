@@ -14,14 +14,22 @@ module.exports = function(app) {
   });
 };
 
+//For Custom cupcakes
 // app.get("/custom", function(req, res) {
 //   res.sendFile(path.join(__dirname, "../public/pages/customization.html"));
 // });
 
-//Carousel became about page
-// app.get("/about", function(req, res) {
-//   res.sendFile(path.join(__dirname, "../public/pages/about.html"));
+//Contact page for app
+// app.get("/contact", function(req, res) {
+//   res.sendFile(path.join(__dirname, "../public/pages/contact.html"));
 // });
+
+//Page that lists inventory
 // app.get("/inventory", function(req, res) {
 //   res.sendFile(path.join(__dirname, "../public/pages/inventory.html"));
+// });
+
+//Manager portal
+// app.get("/inventory", function(req, res) {
+//   res.sendFile(path.join(__dirname, "../public/pages/manager.html"));
 // });

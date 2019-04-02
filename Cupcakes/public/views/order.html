@@ -4,10 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Whipped</title>
-  <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" type="text/css" media="screen" href="../styles/styles.css" /> -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -15,7 +13,6 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <!-- <script src="../public/js/order.js"></script> -->
 </head>
 
 <body>
@@ -55,7 +52,8 @@
           half dozen to four dozen. Custom cupcakes will vary based on order.</p>
       </div>
     </div>
-
+    
+    <!-- Form for submitting order information -->
     <form action="/api/orders" method="POST" id="orderForm">
       <div class="row">
         <div class="form-group col-md-3">
@@ -217,78 +215,65 @@
         <div class="form-group col-md-9"><button type="submit" class="btn btn-primary id" id="submit">Submit</button>
         </div>
       </div>
+    </form>
   </div>
-  </form>
-  <script>
-    //Get Values from form
-    $("#submit").on("click", function (event) {
-      event.preventDefault();
+  </body>
+</html>
+<script>
+//Get Values from form
+$("#submit").on("click", function(event) {
+  event.preventDefault();
+//The hope here was to capture Customer ID information
+  $(document).ready(function() {
+    
 
-      $(document).ready(function () {
-        var url = window.location.search;
-        var customerId;
-        if (url.indexOf("?customers_id=") !== -1) {
-          customerId = url.split("=")[1];
-          getOrder(customerId);
-        }
-        function getOrder(customer) {
-          customerId = customer || "";
-          if (customerId) {
-            customerId = "/?customers_id=" + customerId;
-          }
-          $.get("/api/orders" + customerId);
-        }
-      });
-      
-      var orderData = {
-        date: $("#date").val(),
-        //  customerID: $("#customerID").val(),
-        billingAddress: $("#billingAddress").val(),
-        city: $("#city").val(),
-        state: $("#state option:selected").text(),
-        email: $("#email").val(),
-        pickupDate: $("#pickupDate").val(),
-        cupcakeType: $("#cupcakeType option:selected").text(),
-        quantity: $("#quantity").val(),
-        specialInstructions: $("#instructions").val(),
-        totalPrice: $("#totalPrice").val(),
-        card: $("#card").val(),
-        cardNumber: $("#cardNumber").val(),
-        cvc: $("#cvc").val(),
-      }
-      console.log(orderData);
-      $.post('/api/orders', orderData).then(function() {
-        location.replace("/home");
-      })
-      // .then()
-      // .catch
-    });
-    let today = new Date().toISOString().substr(0, 10);
-    document.querySelector("#date").value = today;
+  //Capture order data
+  var orderData = {
+    date: $("#date").val(),
+    billingAddress: $("#billingAddress").val(),
+    city: $("#city").val(),
+    state: $("#state option:selected").text(),
+    email: $("#email").val(),
+    pickupDate: $("#pickupDate").val(),
+    cupcakeType: $("#cupcakeType option:selected").text(),
+    quantity: $("#quantity").val(),
+    specialInstructions: $("#instructions").val(),
+    totalPrice: $("#totalPrice").val(),
+    card: $("#card").val(),
+    cardNumber: $("#cardNumber").val(),
+    cvc: $("#cvc").val()
+  };
+  console.log(orderData);
+  
+  //Post order data then route home 
+  $.post("/api/orders", orderData).then(function() {
+    location.replace("/home");
+  });
+});
 
-    /// Dynamic Totals
+//populated today date for the order form
+var today = new Date().toISOString().substr(0, 10);
+document.querySelector("#date").value = today;
 
-    var first = document.getElementById('quantity');
+/// Dynamic Totals
+var first = document.getElementById("quantity");
 
-    first.addEventListener("input", sum);
+first.addEventListener("input", sum);
 
-    function sum() {
-      var one = parseFloat(first.value) || 0.00;
-      var add = one * 3.79;
-      add = add.toFixed(2);
-      document.getElementById("totalPrice").value = add;
-    };
+//calculates total
+function sum() {
+  var one = parseFloat(first.value) || 0.0;
+  var add = one * 3.79;
+  add = add.toFixed(2);
+  document.getElementById("totalPrice").value = add;
+}
+});
 
-      /// return thank you page        
+/// return thank you page
 //           window.onload=function() {
 //           document.getElementById("orderForm").onsubmit=function() {
 //           window.location.replace("thanks.html");
 //           return false;
 //           }
 // }
-  </script>
-</body>
-<footer>
-</footer>
-
-</html>
+</script>

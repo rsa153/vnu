@@ -1,3 +1,4 @@
+//Created Inventory table for future iterations of the application.
 module.exports = function(sequelize, DataTypes) {
   var Inventory = sequelize.define("Inventory", {
     cupcakeName: {
@@ -23,14 +24,13 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
-  // Inventory.associate = function(models) {
-  //   // We're saying that a Post should belong to an Author
-  //   // A Post can't be created without an Author due to the foreign key constraint
-  //   Inventory.belongsTo(models.Manager, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  // };
+
+  Inventory.associate = function(models) {
+    Inventory.belongsTo(models.Manager, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return Inventory;
 };

@@ -1,5 +1,7 @@
+//Reguire bycrypt for hastag hashing.
 var bcrypt = require("bcrypt-nodejs");
 
+//Defining customer tables. Note: form validation done using bootstrap.
 module.exports = function(sequelize, DataTypes) {
   var Customers = sequelize.define("Customers", {
     firstName: {
@@ -17,24 +19,19 @@ module.exports = function(sequelize, DataTypes) {
     password: {
       type: DataTypes.STRING,
       allowNull: false
-      // alidate: {
-      //   len: [1, 140]
-      // }
     },
     confirm: {
       type: DataTypes.STRING,
       allowNull: false
-      // alidate: {
-      //   len: [1, 140]
-      // }
     }
   });
+
+  // Hashing of password before Customer acccuunt is created.
 
   Customers.prototype.validPassword = function(password, confirm) {
     return bcrypt.compareSync(password, this.password, confirm, this.confirm);
   };
-  // Hooks are automatic methods that run during various phases of the User Model lifecycle
-  // In this case, before a User is created, we will automatically hash their password
+
   Customers.hook("beforeCreate", function(customers) {
     customers.password = bcrypt.hashSync(
       customers.password,
@@ -47,11 +44,9 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
-  // Customer.associate = function(models) {
-  // }
+
+  // Associting Customer with many orders
   Customers.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
     Customers.hasMany(models.Orders);
   };
   return Customers;

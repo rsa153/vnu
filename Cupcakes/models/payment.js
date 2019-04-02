@@ -1,3 +1,4 @@
+//Created payment table for future iteration of the application
 module.exports = function(sequelize, DataTypes) {
   var Payment = sequelize.define("Payment", {
     card: {
@@ -7,8 +8,6 @@ module.exports = function(sequelize, DataTypes) {
     cardNumber: {
       type: DataTypes.INTEGER,
       allowNull: false
-      // unique: true,
-      // len: [16],
       // validate: {
       //   isCreditCard: {
       //     msg: "You must enter a valid credit card number"
@@ -42,15 +41,14 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  // Payment.associate = function(models) {
-  //   // We're saying that a Post should belong to an Author
-  //   // A Post can't be created without an Author due to the foreign key constraint
-  //   Payment.belongsTo(models.Customers, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  // };
+  // To associate payment to customer so they don't need to keep reinputting with each application.
+  Payment.associate = function(models) {
+    Payment.belongsTo(models.Customers, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
   return Payment;
 };
